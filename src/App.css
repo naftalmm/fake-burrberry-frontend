@@ -255,14 +255,14 @@ hr {
 .accordeon-pane-opened:after {
   margin-right: 1rem;
 
-  content: url(../img/triangle.svg);
+  content: url(./triangle.svg);
   transform: rotate(180deg);
 }
 
 .accordeon-pane-closed:after {
   margin-right: 1rem;
 
-  content: url(../img/triangle.svg);
+  content: url(./triangle.svg);
 }
 
 @media only screen and (min-width: 48rem) { 

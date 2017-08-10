@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export default() => {
+export default () => {
   return (
     <footer>
       <div className="footer-info-container hidden-xs">
@@ -38,13 +38,17 @@ export default() => {
       </div>
 
       <div className="footer-buttons-container">
-        <button className="footer-button" type="button">Shipping country: Russian Federation</button>
-        <button className="footer-button" type="button">Language: English</button>
+        <button className="footer-button" type="button">
+          Shipping country: Russian Federation
+        </button>
+        <button className="footer-button" type="button">
+          Language: English
+        </button>
       </div>
       <div className="footer-help">
         <h4 className="footer-help-header">Need help?</h4>
         <a className="footer-contacts-info">Find out more and contact us</a>
       </div>
-    </footer>    
-  );    
-}
+    </footer>
+  );
+};

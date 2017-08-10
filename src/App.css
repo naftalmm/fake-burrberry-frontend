@@ -14,7 +14,7 @@
 }
 
 @media only screen and (min-width: 48rem) {
-  .logo { 
+  .logo {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
@@ -30,17 +30,17 @@ hr {
 .product-title {
   padding: 1rem;
   margin: 0;
-  
+
   font-family: Lora;
   font-weight: normal;
-  font-size: 1.25rem;  
+  font-size: 1.25rem;
   line-height: 1.5rem;
   text-align: left;
   color: #111111;
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-title { 
+  .product-title {
     padding: 1.5rem .5rem;
     font-size: 1.5rem;
     line-height: 1.75rem;
@@ -65,7 +65,7 @@ hr {
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-photos-container { 
+  .product-photos-container {
     margin-left: -.5rem;
     margin-right: 0;
   }
@@ -79,9 +79,9 @@ hr {
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-info-container { 
-    margin-top: 0; 
-    margin-right: -.5rem; 
+  .product-info-container {
+    margin-top: 0;
+    margin-right: -.5rem;
   }
 }
 
@@ -111,7 +111,9 @@ hr {
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-color-container { margin-right: -.5rem; }
+  .product-color-container {
+    margin-right: -.5rem;
+  }
 }
 
 .product-color-current-selection-name {
@@ -136,13 +138,21 @@ hr {
   border-radius: 50%;
 }
 
-.color-selector-active { border: solid 1px #232122; }
+.color-selector-active {
+  border: solid 1px #232122;
+}
 
-.color-selector-inactive { border: solid 1px transparent; }
+.color-selector-inactive {
+  border: solid 1px transparent;
+}
 
-.color-selector-black { background-color: #232122; }
+.color-selector-black {
+  background-color: #232122;
+}
 
-.color-selector-honey { background-color: #cfa880; }
+.color-selector-honey {
+  background-color: #cfa880;
+}
 
 .product-actions {
   display: flex;
@@ -152,16 +162,18 @@ hr {
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-actions { margin-right: -.5rem; }
+  .product-actions {
+    margin-right: -.5rem;
+  }
 }
 
 .product-size-select {
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
- 
+
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: .75rem;  
+  font-size: .75rem;
   line-height: .875rem;
   text-align: center;
   color: #fff;
@@ -182,7 +194,7 @@ hr {
   text-align: center;
   color: #171717;
 
-  border-radius: 2px;  
+  border-radius: 2px;
   background-color: transparent;
   border: solid 1px #999;
 }
@@ -224,12 +236,12 @@ hr {
 @media only screen and (min-width: 48rem) {
   .product-accordeon-header {
     margin-bottom: 1rem;
-    
+
     border-top: none;
   }
 }
 
-.product-accordeon-header-name-container {   
+.product-accordeon-header-name-container {
   padding: 0;
   margin-left: 1rem;
 
@@ -238,7 +250,9 @@ hr {
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-accordeon-header-name-container { margin-left: .5rem; }
+  .product-accordeon-header-name-container {
+    margin-left: .5rem;
+  }
 }
 
 .product-accordeon-header-name {
@@ -265,9 +279,14 @@ hr {
   content: url(./triangle.svg);
 }
 
-@media only screen and (min-width: 48rem) { 
-  .accordeon-pane-opened:after { display: none; }
-  .accordeon-pane-closed:after { display: none; }
+@media only screen and (min-width: 48rem) {
+  .accordeon-pane-opened:after {
+    display: none;
+  }
+
+  .accordeon-pane-closed:after {
+    display: none;
+  }
 }
 
 .product-accordeon-pane-entry {
@@ -280,23 +299,29 @@ hr {
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-accordeon-pane-entry { 
+  .product-accordeon-pane-entry {
     margin-left: .5rem;
     margin-right: .5rem;
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1.5rem;
   }
 }
 
-.product-accordeon-pane-entry p,ul,li {
+.product-accordeon-pane-entry p,
+ul,
+li {
   display: block;
   margin: 0;
   padding: 0;
 }
 
-.product-accordeon-pane-shipping-and-returns { border-bottom: solid 1px #c6c6c6; }
+.product-accordeon-pane-shipping-and-returns {
+  border-bottom: solid 1px #c6c6c6;
+}
 
 @media only screen and (min-width: 48rem) {
-  .product-accordeon-pane-shipping-and-returns { display: none; }
+  .product-accordeon-pane-shipping-and-returns {
+    display: none;
+  }
 }
 
 .delivery-container {
@@ -309,13 +334,15 @@ hr {
   width: 100%;
   max-width: 100%;
   height: auto;
- 
+
   vertical-align: middle;
   object-fit: contain;
 }
 
 @media only screen and (max-width: 48rem) {
-  .hidden-xs { display: none; }
+  .hidden-xs {
+    display: none;
+  }
 }
 
 .delivery-header,
@@ -346,7 +373,7 @@ hr {
 .delivery-feature-description {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  
+
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: .75rem;
   line-height: 1rem;
@@ -354,22 +381,28 @@ hr {
   color: #171717;
 }
 
-.product-recommended-container { margin: 3rem 1rem 1rem; }
+.product-recommended-container {
+  margin: 3rem 1rem 1rem;
+}
 
 @media only screen and (min-width: 48rem) {
-  .product-recommended-container { margin: 1.5rem .5rem 2rem; }
+  .product-recommended-container {
+    margin: 1.5rem .5rem 2rem;
+  }
 }
 
 .underlined {
   display: inline-block;
   padding-bottom: .5rem;
   margin-bottom: 1.5rem;
-  
+
   border-bottom: solid 1px #171717;
 }
 
 @media only screen and (min-width: 48rem) {
-  .underlined { margin-bottom: 1rem; }
+  .underlined {
+    margin-bottom: 1rem;
+  }
 }
 
 .product-recommended-list {
@@ -377,7 +410,7 @@ hr {
   margin-right: -1.25rem;
 }
 
-@media only screen and (min-width: 48rem) { 
+@media only screen and (min-width: 48rem) {
   .product-recommended-list {
     margin-left: -1rem;
     margin-right: -1rem;
@@ -392,9 +425,9 @@ hr {
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-recommended { 
-    margin-right: 0; 
-    margin-left: 0; 
+  .product-recommended {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -429,12 +462,14 @@ hr {
 
 .product-recommended-more-container {
   margin-left: 1rem;
-  margin-right: 1rem;   
+  margin-right: 1rem;
   margin-bottom: 3rem;
 }
 
 @media only screen and (min-width: 48rem) {
-  .product-recommended-more-container { display: none; }
+  .product-recommended-more-container {
+    display: none;
+  }
 }
 
 .product-recommended-more-list {
@@ -446,8 +481,8 @@ hr {
 
 .product-recommended-more-item {
   display: block;
-  margin-bottom: 1rem;  
-  
+  margin-bottom: 1rem;
+
   font-family: Lora;
   font-size: .875rem;
   font-style: italic;
@@ -476,9 +511,9 @@ footer {
 }
 
 .footer-info-link {
-  display: block;   
+  display: block;
   margin-bottom: .75rem;
-  
+
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: .75rem;
   font-weight: 600;
@@ -493,9 +528,9 @@ footer {
 }
 
 @media only screen and (min-width: 48rem) {
-  .footer-buttons-container { 
-    flex-direction: row; 
-    margin-top: 1.25rem;  
+  .footer-buttons-container {
+    flex-direction: row;
+    margin-top: 1.25rem;
     margin-left: .5rem;
     padding-bottom: 1rem;
   }
@@ -546,5 +581,7 @@ footer {
 }
 
 @media only screen and (min-width: 48rem) {
-  .footer-help { display: none; }
+  .footer-help {
+    display: none;
+  }
 }

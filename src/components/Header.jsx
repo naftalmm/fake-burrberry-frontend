@@ -1,10 +1,12 @@
-import React from 'react';
-import logo from './../logo.svg';
+import React from "react";
+import logo from "./../logo.svg";
 
-export default() => {
+export default () => {
   return (
     <header className="logo-container">
-      <a><img className="logo" src={logo} alt="Burberry Logo"/></a>
+      <a>
+        <img className="logo" src={logo} alt="Burberry Logo" />
+      </a>
     </header>
   );
-}
+};

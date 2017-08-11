@@ -3,25 +3,25 @@ import styled from "styled-components";
 import SectionHeader from "../common/SectionHeader";
 import ProductCard from "./ProductCard";
 
+const Recommended = styled.section`
+  margin: 3rem 1rem 1rem;
+
+  @media only screen and (min-width: 48rem) {
+    margin: 3rem .5rem 2rem;
+  }
+`;
+
+const ProductCardsWrapper = styled.div`
+  margin-left: -1.5rem;
+  margin-right: -1rem;
+
+  @media only screen and (min-width: 48rem) {
+    margin-left: -1rem;
+    margin-right: -.5rem;
+  }
+`;
+
 export default () => {
-  const Recommended = styled.section`
-    margin: 3rem 1rem 1rem;
-
-    @media only screen and (min-width: 48rem) {
-      margin: 3rem .5rem 2rem;
-    }
-  `;
-
-  const ProductCardsWrapper = styled.div`
-    margin-left: -1.5rem;
-    margin-right: -1rem;
-
-    @media only screen and (min-width: 48rem) {
-      margin-left: -1rem;
-      margin-right: -.5rem;
-    }
-  `;
-
   return (
     <Recommended>
       <SectionHeader>WE RECOMMEND</SectionHeader>

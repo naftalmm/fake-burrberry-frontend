@@ -1,22 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import AccordeonPane from "./AccordeonPane";
+import AccordionPane from "./AccordionPane";
 import Description from "../../Product/Description";
 import Delivery from "../../Delivery/index";
-export default () => {
-  const LastAccordeonPane = styled(AccordeonPane)`
+
+const LastAccordionPane = styled(AccordionPane)`
     border-bottom: solid 1px #c6c6c6;
   `;
 
+export default () => {
   return (
     <section>
-      <AccordeonPane
+      <AccordionPane
         headerName="DESCRIPTION"
         headerIsHiddenOnTablet={false}
         isOpened={true}
         children={<Description />}
       />
-      <LastAccordeonPane
+      <LastAccordionPane
         headerName="DELIVERY"
         headerIsHiddenOnTablet={true}
         isOpened={false}

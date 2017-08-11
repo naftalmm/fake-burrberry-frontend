@@ -3,26 +3,26 @@ import styled from "styled-components";
 import SectionHeader from "./../common/SectionHeader";
 import DeliveryFeature from "./DeliveryFeature";
 
+const Delivery = styled.section`
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+
+  @media only screen and (min-width: 48rem) {
+    margin-left: -1rem;
+  }
+`;
+
+const Image = styled.img`
+  min-width: 432px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  vertical-align: middle;
+  object-fit: contain;
+`;
+
 export default () => {
-  const Delivery = styled.section`
-    margin-left: -.5rem;
-    margin-right: -.5rem;
-
-    @media only screen and (min-width: 48rem) {
-      margin-left: -1rem;
-    }
-  `;
-
-  const Image = styled.img`
-    min-width: 432px;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-
-    vertical-align: middle;
-    object-fit: contain;
-  `;
-
   return (
     <Delivery>
       <div className="container-fluid">

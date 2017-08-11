@@ -1,10 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import triangle from "../../triangle.svg";
 
-class AccordeonPaneHeader extends Component {
-  render() {
-    const AccordeonPaneHeader = styled.div`
+const AccordionPaneHeader = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -28,7 +26,7 @@ class AccordeonPaneHeader extends Component {
       }
     `;
 
-    const ButtonWrapper = styled.button`
+const ButtonWrapper = styled.button`
       padding: 0;
       margin-left: 1rem;
 
@@ -40,7 +38,7 @@ class AccordeonPaneHeader extends Component {
       }
     `;
 
-    const Header = styled.h2`
+const Header = styled.h2`
       margin: 0;
 
       font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -51,19 +49,17 @@ class AccordeonPaneHeader extends Component {
       color: #171717;
     `;
 
+export default (props) => {
     return (
-      <AccordeonPaneHeader
-        isOpened={this.props.isOpened}
-        isHiddenOnTablet={this.props.isHiddenOnTablet}
+      <AccordionPaneHeader
+        isOpened={props.isOpened}
+        isHiddenOnTablet={props.isHiddenOnTablet}
       >
         <ButtonWrapper type="button">
           <Header>
-            {this.props.name}
+            {props.name}
           </Header>
         </ButtonWrapper>
-      </AccordeonPaneHeader>
+      </AccordionPaneHeader>
     );
   }
-}
-
-export default AccordeonPaneHeader;

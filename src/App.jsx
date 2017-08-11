@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header/";
 import Product from "./Product/";
-import Accordeon from "./common/Accordeon/";
+import Accordion from "./common/Accordion/";
 import Recommended from "./Recommended/";
 import RecommendedMore from "./RecommendedMore/";
 import Footer from "./Footer/";
@@ -18,7 +18,7 @@ class App extends Component {
           priceCurrency="руб."
           vendorCode="39428531"
         />
-        <Accordeon />
+        <Accordion />
         <Recommended />
         <RecommendedMore />
         <Footer />

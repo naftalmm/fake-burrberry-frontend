@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 
-class AccordeonPaneEntry extends Component {
-  render() {
-    const AccordeonPaneEntry = styled.div`
+const AccordionPaneEntry = styled.div`
       ${props => !props.isOpened && css`display: none`};
      
       margin: 0 1rem 2rem 1rem;
@@ -28,12 +26,11 @@ class AccordeonPaneEntry extends Component {
         padding: 0;
       }
     `;
-    return (
-      <AccordeonPaneEntry isOpened={this.props.isOpened}>
-        {this.props.children}
-      </AccordeonPaneEntry>
-    );
-  }
-}
 
-export default AccordeonPaneEntry;
+export default (props) => {
+    return (
+      <AccordionPaneEntry isOpened={props.isOpened}>
+        {props.children}
+      </AccordionPaneEntry>
+    );
+}

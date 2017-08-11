@@ -3,22 +3,23 @@ import styled from "styled-components";
 import ColorButton from "./ColorButton";
 import CurrentSelectionName from "./CurrentSelectionName";
 
+const ColorPallete = styled.div`
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+`;
+
+const ColorSelector = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+
+  @media only screen and (min-width: 48rem) {
+    margin-right: -.5rem;
+  }
+`;
+
 export default () => {
-  const ColorPallete = styled.div`
-    display: flex;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-  `;
-
-  const ColorSelector = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-
-    @media only screen and (min-width: 48rem) {
-      margin-right: -.5rem;
-    }
-  `;
   return (
     <ColorSelector>
       <CurrentSelectionName color="Honey" />

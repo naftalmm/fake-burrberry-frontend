@@ -1,27 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
-class Photo extends Component {
-  render() {
-    const Image = styled.img`
-      min-width: 300px;
-      width: 100%;
-      max-width: 100%;
-      height: auto;
+const Image = styled.img`
+  min-width: 300px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 
-      vertical-align: middle;
-      object-fit: contain;
-    `;
-    return (
-      <picture>
-        <source media="(min-width: 768px)" srcSet={this.props.srcSet} />
-        <Image
-          src={this.props.src}
-          alt={this.props.alt}
-        />
-      </picture>
-    );
-  }
-}
+  vertical-align: middle;
+  object-fit: contain;
+`;
 
-export default Photo;
+export default (props) => {
+  return (
+    <picture>
+      <source media="(min-width: 768px)" srcSet={props.srcSet} />
+      <Image src={props.src} alt={props.alt} />
+    </picture>
+  );
+};

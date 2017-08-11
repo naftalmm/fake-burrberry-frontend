@@ -1,22 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
-class VendorCode extends Component {
-  render() {
-    const VendorCode = styled.p`
-      margin: 0;
+const VendorCode = styled.p`
+  margin: 0;
 
-      font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: .75rem;
-      line-height: 1rem;
-      color: #171717;
-    `;
-    return (
-      <VendorCode>
-        Item {this.props.value}
-      </VendorCode>
-    );
-  }
-}
+  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: .75rem;
+  line-height: 1rem;
+  color: #171717;
+`;
 
-export default VendorCode;
+export default props => {
+  return (
+    <VendorCode>
+      Item {props.value}
+    </VendorCode>
+  );
+};

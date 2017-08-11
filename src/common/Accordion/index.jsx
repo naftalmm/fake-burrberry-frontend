@@ -6,7 +6,7 @@ import Delivery from "../../Delivery/index";
 
 const LastAccordionPane = styled(AccordionPane)`
     border-bottom: solid 1px #c6c6c6;
-  `;
+`;
 
 export default () => {
   return (

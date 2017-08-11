@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Info from "./Info/";
+import Info from "./Info/index";
 import Help from "./Help";
 import Button from "./Button";
 

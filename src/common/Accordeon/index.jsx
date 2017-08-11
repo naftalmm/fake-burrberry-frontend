@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import AccordeonPane from "./AccordeonPane";
-import Description from "./../Product/Description";
-import Delivery from "./../Delivery/";
+import Description from "../../Product/Description";
+import Delivery from "../../Delivery/index";
 export default () => {
   const LastAccordeonPane = styled(AccordeonPane)`
     border-bottom: solid 1px #c6c6c6;

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Header from "./components/Header/";
-import Product from "./components/Product/";
-import Accordeon from "./components/Accordeon/";
-import Recommended from "./components/Recommended/";
-import RecommendedMore from "./components/RecommendedMore/";
-import Footer from "./components/Footer/";
+import Header from "./Header/";
+import Product from "./Product/";
+import Accordeon from "./common/Accordeon/";
+import Recommended from "./Recommended/";
+import RecommendedMore from "./RecommendedMore/";
+import Footer from "./Footer/";
 import "./App.css";
 
 class App extends Component {

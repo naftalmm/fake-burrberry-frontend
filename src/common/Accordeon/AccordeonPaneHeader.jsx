@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import triangle from "./../../triangle.svg";
+import triangle from "../../triangle.svg";
 
 class AccordeonPaneHeader extends Component {
   render() {

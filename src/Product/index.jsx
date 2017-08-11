@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import PhotosContainer from "./PhotosContainer";
 import Info from "./Info";
-import ColorSelector from "./../ColorSelector";
+import ColorSelector from "../common/ColorSelector/index";
 import Actions from "./Actions";
 
 class Product extends Component {

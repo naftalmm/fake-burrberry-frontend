@@ -15,10 +15,21 @@ const Info = styled.div`
   }
 `;
 
-export default (props) => {
+const StyledPrice = styled(Price)`
+  margin: 0;
+  margin: 0;
+
+  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  color: #111;
+`;
+
+export default props => {
   return (
     <Info>
-      <Price value={props.priceValue} currency={props.priceCurrency} />
+      <StyledPrice value={props.priceValue} currency={props.priceCurrency} />
       <VendorCode value={props.vendorCode} />
     </Info>
   );

@@ -1,20 +1,17 @@
 import React from "react";
-import styled from "styled-components";
-
-const Price = styled.h2`
-  margin: 0;
-
-  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.1875rem;
-  color: #111;
-`;
+import { FormattedNumber } from "react-intl";
 
 export default props => {
   return (
-    <Price>
-      {props.value} {props.currency}
-    </Price>
+    <div className={props.className}>
+      <FormattedNumber
+        style="currency"
+        currency={props.currency}
+        currencyDisplay="code"
+        value={props.value}
+        minimumFractionDigits={0}
+        maximumFractionDigits={0}
+      />
+    </div>
   );
 };

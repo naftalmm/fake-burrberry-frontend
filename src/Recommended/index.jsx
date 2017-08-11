@@ -33,8 +33,8 @@ export default () => {
                 src="img/img1.jpg"
                 alt="Recommended product photo"
                 name="Emroided Hooded"
-                priceValue="27 000"
-                priceCurrency="руб."
+                priceValue={27000}
+                priceCurrency="RUB"
               />
             </div>
             <div className="col-xs-6 col-md-3">
@@ -42,8 +42,8 @@ export default () => {
                 src="img/img2.jpg"
                 alt="Recommended product photo"
                 name="Relaxed Fit Stretch Jeans"
-                priceValue="22 500"
-                priceCurrency="руб."
+                priceValue={22500}
+                priceCurrency="RUB"
               />
             </div>
             <div className="col-xs-6 col-md-3">
@@ -51,8 +51,8 @@ export default () => {
                 src="img/img3.jpg"
                 alt="Recommended product photo"
                 name="Leather and House Check"
-                priceValue="120 000"
-                priceCurrency="руб."
+                priceValue={120000}
+                priceCurrency="RUB"
               />
             </div>
             <div className="col-xs-6 col-md-3">
@@ -60,8 +60,8 @@ export default () => {
                 src="img/img4.jpg"
                 alt="Recommended product photo"
                 name="Leather Wingtip Check"
-                priceValue="46 000"
-                priceCurrency="руб."
+                priceValue={46000}
+                priceCurrency="RUB"
               />
             </div>
           </div>

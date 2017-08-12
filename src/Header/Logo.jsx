@@ -16,9 +16,6 @@ const Image = styled.img`
   }
 
   @media only screen and (min-width: 62rem) {
-    width: 221px;
-    height: 16px;
-
     padding-top: 2rem;
     padding-bottom: 2rem;
   }

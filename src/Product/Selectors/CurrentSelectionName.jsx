@@ -9,12 +9,10 @@ const CurrentSelectionName = styled.p`
   line-height: 1rem;
 `;
 
-const ColorName = styled.span`font-weight: bold;`;
-
 export default props => {
   return (
     <CurrentSelectionName>
-      {props.selectableName}: <ColorName>{props.value}</ColorName>
+      {props.label}: <b>{props.value}</b>
     </CurrentSelectionName>
   );
 };

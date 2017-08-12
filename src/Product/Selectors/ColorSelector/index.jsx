@@ -27,7 +27,7 @@ const ColorSelector = styled.div`
 export default () => {
   return (
     <ColorSelector>
-      <CurrentSelectionName selectableName="Colour" value="Honey" />
+      <CurrentSelectionName label="Colour" value="Honey" />
       <ColorPallete>
         <ColorButton color="black" isActive={false} />
         <ColorButton color="honey" isActive={true} />

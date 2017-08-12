@@ -26,7 +26,7 @@ export default () => {
   return (
     <SizeSelector>
       <Wrapper>
-        <CurrentSelectionName selectableName="Size" value="XL" />
+        <CurrentSelectionName label="Size" value="XL" />
         <SizeHelpButton />
       </Wrapper>
       <SizePallete>

@@ -15,13 +15,13 @@ export default () => {
         headerName="DESCRIPTION"
         headerIsHiddenOnTablet={false}
         isOpened={true}
-        children={<Description />}
+        content={<Description />}
       />
       <LastAccordionPane
         headerName="DELIVERY"
         headerIsHiddenOnTablet={true}
         isOpened={false}
-        children={<Delivery />}
+        content={<Delivery />}
       />
     </section>
   );

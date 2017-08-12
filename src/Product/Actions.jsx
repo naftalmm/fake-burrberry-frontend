@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import SelectSizeButton from "./SelectSizeButton";
-import FindButton from "./FindButton";
+import PrimaryButton from "./PrimaryButton";
+import SecondaryButton from "./SecondaryButton";
 import SizeHelpButton from "./SizeHelpButton";
 
 const Actions = styled.div`
@@ -18,8 +18,8 @@ const Actions = styled.div`
 export default () => {
   return (
     <Actions>
-      <SelectSizeButton />
-      <FindButton />
+      <PrimaryButton children="SELECT A SIZE" type="button"/>
+      <SecondaryButton children="FIND IN STORE" type="button"/>
       <SizeHelpButton />
     </Actions>
   );

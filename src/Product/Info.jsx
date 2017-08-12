@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Price from "./Price";
+import FormattedPrice from "./FormattedPrice";
 import VendorCode from "./VendorCode";
 
 const Info = styled.div`
@@ -15,7 +15,7 @@ const Info = styled.div`
   }
 `;
 
-const StyledPrice = styled(Price)`
+const Price = styled(FormattedPrice)`
   margin: 0;
   margin: 0;
 
@@ -29,7 +29,7 @@ const StyledPrice = styled(Price)`
 export default props => {
   return (
     <Info>
-      <StyledPrice value={props.priceValue} currency={props.priceCurrency} />
+      <Price value={props.priceValue} currency={props.priceCurrency} />
       <VendorCode value={props.vendorCode} />
     </Info>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Photo from "./Photo";
 
-const PhotosContainer = styled.div`
+const PhotosCarousel = styled.div`
   display: flex;
   overflow-x: scroll;
   margin-left: -1rem;
@@ -16,7 +16,7 @@ const PhotosContainer = styled.div`
 
 export default () => {
   return (
-    <PhotosContainer>
+    <PhotosCarousel>
       <Photo
         srcSet="img/bitmap_4@2x.jpg 600w, img/bitmap_4@3x.jpg 900w"
         src="img/bitmap_4.jpg"
@@ -37,6 +37,6 @@ export default () => {
         src="img/bitmap_3.jpg"
         alt="Product photo"
       />
-    </PhotosContainer>
+    </PhotosCarousel>
   );
 };

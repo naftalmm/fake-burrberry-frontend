@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import SectionHeader from "../common/SectionHeader";
-import Link from "./Link";
 
 const RecommendedMore = styled.section`
   margin-left: 1rem;
@@ -18,6 +17,17 @@ const LinksWrapper = styled.section`
   flex-direction: column;
   margin: 0;
   padding: 0;
+`;
+
+const Link = styled.a`
+  display: block;
+  margin-bottom: 1rem;
+
+  font-family: Lora;
+  font-size: .875rem;
+  font-style: italic;
+  line-height: 17px;
+  color: #171717;
 `;
 
 export default () => {

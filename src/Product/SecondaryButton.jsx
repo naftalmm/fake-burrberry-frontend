@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const FindButton = styled.button`
+export default styled.button`
   margin-bottom: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -16,7 +15,3 @@ const FindButton = styled.button`
   background-color: transparent;
   border: solid 1px #999;
 `;
-
-export default () => {
-  return <FindButton type="button">FIND IN STORE</FindButton>;
-};

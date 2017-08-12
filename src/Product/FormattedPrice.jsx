@@ -5,6 +5,7 @@ export default props => {
   return (
     <div className={props.className}>
       <FormattedNumber
+        // eslint-disable-next-line
         style="currency"
         currency={props.currency}
         currencyDisplay="code"

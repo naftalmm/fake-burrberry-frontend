@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const SelectSizeButton = styled.button`
+export default styled.button`
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -16,7 +15,3 @@ const SelectSizeButton = styled.button`
   background-color: #171717;
   border: solid 1px #171717;
 `;
-
-export default () => {
-  return <SelectSizeButton type="button">SELECT A SIZE</SelectSizeButton>;
-};

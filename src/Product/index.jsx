@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
-import PhotosContainer from "./PhotosContainer";
+import PhotosCarousel from "./PhotosCarousel";
 import Info from "./Info";
 import ColorSelector from "../common/ColorSelector/index";
 import Actions from "./Actions";
@@ -38,7 +38,7 @@ export default props => {
       <main className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-md-7">
-            <PhotosContainer />
+            <PhotosCarousel />
           </div>
 
           <div className="col-xs-12 col-md-5">

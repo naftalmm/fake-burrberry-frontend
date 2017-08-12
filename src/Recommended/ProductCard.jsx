@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Price from "./../Product/Price";
+import FormattedPrice from "./../Product/FormattedPrice";
 
 const ProductCard = styled.a`
   display: block;
@@ -31,7 +31,7 @@ const ProductName = styled.p`
   color: #171717;
 `;
 
-const StyledPrice = styled(Price)`
+const Price = styled(FormattedPrice)`
   margin-top: .5rem;
   margin-bottom: 0;
 
@@ -48,7 +48,7 @@ export default props => {
       <ProductName>
         {props.name}
       </ProductName>
-      <StyledPrice value={props.priceValue} currency={props.priceCurrency} />
+      <Price value={props.priceValue} currency={props.priceCurrency} />
     </ProductCard>
   );
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import Tablet from "./../common/Responsive/Tablet";
+import TabletOrDesktop from "./../common/Responsive/TabletOrDesktop";
 import SectionHeader from "./../common/SectionHeader";
 import DeliveryFeature from "./DeliveryFeature";
 
 const Image = styled.img`
-  min-width: 432px;
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -17,16 +18,20 @@ export default () => {
   return (
     <div className="box">
       <div className="row middle-lg">
-        <div className="col-md-7">
-          <Image
-            src="img/delivery.jpg"
-            srcSet="img/delivery@2x.jpg 2x, img/delivery@3x.jpg 3x"
-            alt="Product boxing"
-          />
-        </div>
+        <Tablet>
+          <div className="col-md-7">
+            <Image
+              src="img/delivery.jpg"
+              srcSet="img/delivery@2x.jpg 2x, img/delivery@3x.jpg 3x"
+              alt="Product boxing"
+            />
+          </div>
+        </Tablet>
         <div className="col-lg-1" />
-        <div className="col-md-5 col-lg-4">
-          <SectionHeader>DELIVERY</SectionHeader>
+        <div className="col-xs-12 col-md-5 col-lg-4">
+          <TabletOrDesktop>
+            <SectionHeader>DELIVERY</SectionHeader>
+          </TabletOrDesktop>
           <DeliveryFeature
             name="Free Next Day Delivery"
             description="Order before 7pm Monday to Thursday for delivery the next day"

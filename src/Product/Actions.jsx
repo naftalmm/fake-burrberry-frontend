@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ColorSelector from "./Selectors/ColorSelector";
 import SizeSelector from "./Selectors/SizeSelector";
 import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
+import FindButton from "./FindButton";
 import SizeHelpButton from "./SizeHelpButton";
 
 const Actions = styled.div`
@@ -42,7 +42,7 @@ export default () => {
             </LG>
           </div>
           <div className="col-xs-12 col-lg-6">
-            <SecondaryButton type="button">FIND IN STORE</SecondaryButton>
+            <FindButton />
           </div>
           <XS_MD>
             <div className="col-xs-12">

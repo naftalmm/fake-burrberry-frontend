@@ -16,6 +16,7 @@ const Product = styled.div`
   }
 
   @media only screen and (min-width: 62rem) {
+    margin-bottom: 4rem;
     background-color: ${props => props.backgroundColor};
   }
 `;

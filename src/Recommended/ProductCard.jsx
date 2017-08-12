@@ -5,10 +5,11 @@ import FormattedPrice from "./../Product/FormattedPrice";
 const ProductCard = styled.a`
   display: block;
   margin-bottom: 2rem;
-  margin-left: .5rem;
+  margin-right: .5rem;
 
   @media only screen and (min-width: 48rem) {
-    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
   }
 `;
 

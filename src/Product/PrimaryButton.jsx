@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export default styled.button`
+  width: 100%;
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;

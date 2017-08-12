@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import TabletOrDesktop from "./../common/Responsive/TabletOrDesktop";
 import Info from "./Info";
 import Help from "./Help";
 
@@ -12,13 +13,16 @@ const Footer = styled.footer`
 const ButtonsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
 
   @media only screen and (min-width: 48rem) {
     flex-direction: row;
     margin-top: 1.25rem;
-    margin-left: .5rem;
     padding-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 62rem) {
+    margin-top: 2rem;
+    padding-bottom: 4rem;
   }
 `;
 
@@ -40,11 +44,21 @@ const Button = styled.button`
 export default () => {
   return (
     <Footer>
-      <Info />
-      <ButtonsWrapper>
-        <Button children="Shipping country: Russian Federation" type="button" />
-        <Button children="Language: English" type="button" />
-      </ButtonsWrapper>
+      <TabletOrDesktop>
+        <Info />
+      </TabletOrDesktop>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12">
+            <ButtonsWrapper>
+              <Button type="button">
+                Shipping country: Russian Federation
+              </Button>
+              <Button type="button">Language: English</Button>
+            </ButtonsWrapper>
+          </div>
+        </div>
+      </div>
       <Help />
     </Footer>
   );

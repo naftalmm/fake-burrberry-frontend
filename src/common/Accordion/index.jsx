@@ -13,13 +13,11 @@ export default () => {
     <section>
       <AccordionPane
         headerName="DESCRIPTION"
-        headerIsHiddenOnTablet={false}
         isOpened={true}
         content={<Description />}
       />
       <LastAccordionPane
         headerName="DELIVERY"
-        headerIsHiddenOnTablet={true}
         isOpened={false}
         content={<Delivery />}
       />

@@ -3,7 +3,7 @@ import { FormattedNumber } from "react-intl";
 
 export default props => {
   return (
-    <div className={props.className}>
+    <span className={props.className}>
       <FormattedNumber
         // eslint-disable-next-line
         style="currency"
@@ -13,6 +13,6 @@ export default props => {
         minimumFractionDigits={0}
         maximumFractionDigits={0}
       />
-    </div>
+    </span>
   );
 };

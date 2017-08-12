@@ -6,17 +6,6 @@ const RecommendedMore = styled.section`
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 3rem;
-
-  @media only screen and (min-width: 48rem) {
-    display: none;
-  }
-`;
-
-const LinksWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
 `;
 
 const Link = styled.a`
@@ -33,12 +22,16 @@ const Link = styled.a`
 export default () => {
   return (
     <RecommendedMore>
-      <SectionHeader>MORE FOR YOU</SectionHeader>
-      <LinksWrapper>
-        <Link children="Men’s Black Trench Coats" />
-        <Link children="Men’s Short Trench Coats" />
-        <Link children="Men’s Long Trench Coats" />
-      </LinksWrapper>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs">
+            <SectionHeader>MORE FOR YOU</SectionHeader>
+            <Link>Men’s Black Trench Coats</Link>
+            <Link>Men’s Short Trench Coats</Link>
+            <Link>Men’s Long Trench Coats</Link>
+          </div>
+        </div>
+      </div>
     </RecommendedMore>
   );
 };

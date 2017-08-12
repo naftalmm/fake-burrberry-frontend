@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Name = styled.h3`
+  margin-top: 0;
   margin-bottom: 0.25rem;
 
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -27,8 +28,8 @@ const DeliveryFeature = styled.div`margin-bottom: 1.5rem;`;
 export default props => {
   return (
     <DeliveryFeature>
-      <Name children={props.name} />
-      <Description children={props.description} />
+      <Name>{props.name}</Name>
+      <Description>{props.description}</Description>
     </DeliveryFeature>
   );
 };

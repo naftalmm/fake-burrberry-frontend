@@ -1,26 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import Desktop from "./../common/Responsive/Desktop";
+import TabletOrMobile from "./../common/Responsive/TabletOrMobile";
 import { Helmet } from "react-helmet";
-import PhotosCarousel from "./PhotosCarousel";
+import Photo from "./Photo";
+import Photos from "./PhotosCarousel";
 import Info from "./Info";
-import ColorSelector from "../common/ColorSelector/index";
+import Title from "./Title";
 import Actions from "./Actions";
+import DeliveryFeature from "./../Delivery/DeliveryFeature";
 
-const Title = styled.h1`
-  padding: 1rem;
-  margin: 0;
-
-  font-family: Lora;
-  font-weight: normal;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  text-align: left;
-  color: #111111;
-
+const Product = styled.div`
   @media only screen and (min-width: 48rem) {
-    padding: 1.5rem .5rem;
-    font-size: 1.5rem;
-    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media only screen and (min-width: 62rem) {
+    background-color: ${props => props.backgroundColor};
   }
 `;
 
@@ -32,27 +28,52 @@ export default props => {
           {props.title + " | Men - Burberry"}
         </title>
       </Helmet>
-      <Title>
-        {props.title}
-      </Title>
-      <main className="container-fluid">
-        <div className="row">
-          <div className="col-xs-12 col-md-7">
-            <PhotosCarousel />
+      <Product backgroundColor={props.backgroundColor}>
+        <main className="container">
+          <TabletOrMobile>
+            <div className="row">
+              <div className="col-xs-12">
+                <Title>
+                  {props.title}
+                </Title>
+              </div>
+            </div>
+          </TabletOrMobile>
+          <div className="row middle-lg">
+            <div className="col-xs-12 col-md-7 col-lg-6">
+              <TabletOrMobile>
+                <Photos />
+              </TabletOrMobile>
+              <Desktop>
+                <Photo
+                  srcSet="img/bitmap_4@2x.jpg 600w, img/bitmap_4@3x.jpg 900w"
+                  src="img/bitmap_4.jpg"
+                  alt="Product photo"
+                />
+              </Desktop>
+            </div>
+            <div className="col-xs-12 col-md-5 col-lg-6">
+              <Desktop>
+                <Title>
+                  {props.title}
+                </Title>
+              </Desktop>
+              <Info
+                priceValue={props.priceValue}
+                priceCurrency={props.priceCurrency}
+                vendorCode={props.vendorCode}
+              />
+              <Actions />
+              <Desktop>
+                <DeliveryFeature
+                  name="Free Next Day Delivery"
+                  description="Order before 7pm Monday to Thursday for delivery the next day"
+                />
+              </Desktop>
+            </div>
           </div>
-
-          <div className="col-xs-12 col-md-5">
-            <Info
-              priceValue={props.priceValue}
-              priceCurrency={props.priceCurrency}
-              vendorCode={props.vendorCode}
-            />
-            <ColorSelector />
-
-            <Actions />
-          </div>
-        </div>
-      </main>
+        </main>
+      </Product>
     </div>
   );
 };

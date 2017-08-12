@@ -6,8 +6,7 @@ export default styled.h2`
 
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  line-height: 1.1875rem;
+  line-height: 1.25rem;
   font-weight: 500;
-  text-align: left;
   color: #171717;
 `;

@@ -5,13 +5,6 @@ import Photo from "./Photo";
 const PhotosCarousel = styled.div`
   display: flex;
   overflow-x: scroll;
-  margin-left: -1rem;
-  margin-right: -1rem;
-
-  @media only screen and (min-width: 48rem) {
-    margin-left: -.5rem;
-    margin-right: 0;
-  }
 `;
 
 export default () => {

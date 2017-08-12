@@ -1,14 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const Info = styled.div`
-  @media only screen and (max-width: 48rem) {
-    display: none;
-  }
-
-  margin-left: -.5rem;
-`;
-
 const Header = styled.h4`
   margin-top: 0;
   margin-bottom: 1rem;
@@ -17,6 +9,10 @@ const Header = styled.h4`
   font-size: .75rem;
   font-weight: bold;
   color: #171717;
+
+  @media only screen and (min-width: 62rem) {
+    margin-top: 4rem;
+  }
 `;
 
 const Link = styled.a`
@@ -32,38 +28,36 @@ const Link = styled.a`
 
 export default () => {
   return (
-    <Info>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-3">
-            <Header>CUSTOMER SERVICE</Header>
-            <Link children="Contact Us" />
-            <Link children="Payment" />
-            <Link children="Shipping" />
-            <Link children="Returns" />
-            <Link children="Faqs" />
-            <Link children="Live Chat" />
-            <Link children="The Burberry App" />
-            <Link children="Store Locator" />
-          </div>
-          <div className="col-md-3">
-            <Header>OUR COMPANY</Header>
-            <Link children="Our History" />
-            <Link children="Burberry Group Plc" />
-            <Link children="Careers" />
-            <Link children="Corporate Responsibility" />
-            <Link children="Site Map" />
-          </div>
-          <div className="col-md-3">
-            <Header>LEGAL &amp; COOKIES</Header>
-            <Link children="Terms &amp; Conditions" />
-            <Link children="Privacy Policy" />
-            <Link children="Cookie Policy" />
-            <Link children="Accessibility Statement" />
-            <Link children="Japan Only - SCTL indications" />
-          </div>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-3">
+          <Header>CUSTOMER SERVICE</Header>
+          <Link>Contact Us</Link>
+          <Link>Payment</Link>
+          <Link>Shipping</Link>
+          <Link>Returns</Link>
+          <Link>Faqs</Link>
+          <Link>Live Chat</Link>
+          <Link>The Burberry App</Link>
+          <Link>Store Locator</Link>
+        </div>
+        <div className="col-md-3">
+          <Header>OUR COMPANY</Header>
+          <Link>Our History</Link>
+          <Link>Burberry Group Plc</Link>
+          <Link>Careers</Link>
+          <Link>Corporate Responsibility</Link>
+          <Link>Site Map</Link>
+        </div>
+        <div className="col-md-3">
+          <Header>LEGAL &amp; COOKIES</Header>
+          <Link>Terms &amp; Conditions</Link>
+          <Link>Privacy Policy</Link>
+          <Link>Cookie Policy</Link>
+          <Link>Accessibility Statement</Link>
+          <Link>Japan Only - SCTL indications</Link>
         </div>
       </div>
-    </Info>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import triangle from "../../triangle.svg";
 
 const AccordionPaneHeader = styled.div`
@@ -12,17 +12,6 @@ const AccordionPaneHeader = styled.div`
     margin-right: 1rem;
     transform: ${props => (props.isOpened ? "rotate(180deg)" : "none")};
     content: url(${triangle});
-
-    @media only screen and (min-width: 48rem) {
-      display: none;
-    }
-  }
-
-  @media only screen and (min-width: 48rem) {
-    margin-bottom: 1rem;
-
-    border-top: none;
-    ${props => props.isHiddenOnTablet && css`display: none;`};
   }
 `;
 
@@ -32,10 +21,6 @@ const ButtonWrapper = styled.button`
 
   background-color: transparent;
   border: none;
-
-  @media only screen and (min-width: 48rem) {
-    margin-left: .5rem;
-  }
 `;
 
 const Header = styled.h2`
@@ -53,7 +38,6 @@ export default props => {
   return (
     <AccordionPaneHeader
       isOpened={props.isOpened}
-      isHiddenOnTablet={props.isHiddenOnTablet}
     >
       <ButtonWrapper type="button">
         <Header>

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import FormattedPrice from "./FormattedPrice";
 import VendorCode from "./VendorCode";
+import TabletOrMobile from "./../common/Responsive/TabletOrMobile";
 
 const Info = styled.div`
   display: flex;
@@ -13,10 +14,13 @@ const Info = styled.div`
     margin-top: 0;
     margin-right: -.5rem;
   }
+
+  @media only screen and (min-width: 62rem) {
+    margin-bottom: 3rem;
+  }
 `;
 
 const Price = styled(FormattedPrice)`
-  margin: 0;
   margin: 0;
 
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -30,7 +34,9 @@ export default props => {
   return (
     <Info>
       <Price value={props.priceValue} currency={props.priceCurrency} />
-      <VendorCode value={props.vendorCode} />
+      <TabletOrMobile>
+        <VendorCode value={props.vendorCode} />
+      </TabletOrMobile>
     </Info>
   );
 };

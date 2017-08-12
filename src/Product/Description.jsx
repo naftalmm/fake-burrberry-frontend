@@ -1,8 +1,9 @@
 import React from "react";
+import styled from "styled-components";
 
-export default () => {
+const Description = props => {
   return (
-    <div>
+    <div className={props.className}>
       <p>A refined car coat crafted in protective cotton gabardine.</p>
       <p>
         Invented by Thomas Burberry in 1879, cotton gabardine is a tightly woven
@@ -30,3 +31,24 @@ export default () => {
     </div>
   );
 };
+
+export default styled(Description)`
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: Lora;
+  font-size: .875rem;
+  line-height: 1.5rem;
+  color: #171717;
+
+  & p,
+  ul,
+  li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media only screen and (min-width: 48rem) {
+    margin-bottom: 3rem;
+  }
+`;

@@ -5,12 +5,16 @@ import Photo from "./Photo";
 const Gallery = styled.div`margin-bottom: 4rem;`;
 
 const Image = styled.div`
-  &:nth-child(odd) {
+  &:nth-child(1) {
     margin-top: 6rem;
   }
 
-  &:nth-child(even) {
+  &:nth-child(2) {
     margin-top: 10rem;
+  }
+
+  &:nth-child(3) {
+    margin-top: 4rem;
   }
 `;
 

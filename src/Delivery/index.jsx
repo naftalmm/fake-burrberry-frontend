@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Tablet from "./../common/Responsive/Tablet";
-import TabletOrDesktop from "./../common/Responsive/TabletOrDesktop";
+import {MD_LG} from "./../common/Responsive";
 import SectionHeader from "./../common/SectionHeader";
 import DeliveryFeature from "./DeliveryFeature";
 
@@ -18,7 +17,7 @@ export default () => {
   return (
     <div className="box">
       <div className="row middle-lg">
-        <Tablet>
+        <MD_LG>
           <div className="col-md-7">
             <Image
               src="img/delivery.jpg"
@@ -26,12 +25,12 @@ export default () => {
               alt="Product boxing"
             />
           </div>
-        </Tablet>
+        </MD_LG>
         <div className="col-lg-1" />
         <div className="col-xs-12 col-md-5 col-lg-4">
-          <TabletOrDesktop>
+          <MD_LG>
             <SectionHeader>DELIVERY</SectionHeader>
-          </TabletOrDesktop>
+          </MD_LG>
           <DeliveryFeature
             name="Free Next Day Delivery"
             description="Order before 7pm Monday to Thursday for delivery the next day"

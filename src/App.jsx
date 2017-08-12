@@ -1,10 +1,6 @@
 import React from "react";
 import { IntlProvider, addLocaleData } from "react-intl";
-import Mobile from "./common/Responsive/Mobile";
-import Tablet from "./common/Responsive/Tablet";
-import TabletOrMobile from "./common/Responsive/TabletOrMobile";
-import TabletOrDesktop from "./common/Responsive/TabletOrDesktop";
-import Desktop from "./common/Responsive/Desktop";
+import {XS, XS_MD, MD_LG, LG} from "./common/Responsive";
 import SectionHeader from "./common/SectionHeader";
 import Header from "./Header/";
 import Product from "./Product/";
@@ -27,9 +23,9 @@ export default () => {
     <IntlProvider locale="ru">
       <div>
         <Header />
-        <TabletOrMobile>
+        <XS_MD>
           <hr />
-        </TabletOrMobile>
+        </XS_MD>
 
         <Product
           backgroundColor="#d4bdad"
@@ -39,17 +35,17 @@ export default () => {
           vendorCode="39428531"
         />
 
-        <Mobile>
+        <XS>
           <Accordion />
-        </Mobile>
-        <TabletOrDesktop>
+        </XS>
+        <MD_LG>
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-lg-4">
                 <SectionHeader>DESCRIPTION</SectionHeader>
                 <Description />
               </div>
-              <Desktop>
+              <LG>
                 <div className="col-lg-8">
                   <Photo
                     srcSet="img/bitmap_5@2x.jpg 600w, img/bitmap_5@3x.jpg 900w"
@@ -57,23 +53,23 @@ export default () => {
                     alt="Product photo"
                   />
                 </div>
-              </Desktop>
+              </LG>
             </div>
-            <Desktop>
+            <LG>
               <Gallery />
-            </Desktop>
+            </LG>
             <div className="row">
               <div className="col-md-12">
                 <Delivery />
               </div>
             </div>
           </div>
-        </TabletOrDesktop>
+        </MD_LG>
 
         <Recommended />
-        <Mobile>
+        <XS>
           <RecommendedMore />
-        </Mobile>
+        </XS>
         <Footer />
       </div>
     </IntlProvider>

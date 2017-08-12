@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Desktop from "./../common/Responsive/Desktop";
-import TabletOrMobile from "./../common/Responsive/TabletOrMobile";
+import {XS_MD, LG} from "../common/Responsive";
 import { Helmet } from "react-helmet";
 import Photo from "./Photo";
 import Photos from "./PhotosCarousel";
@@ -31,7 +30,7 @@ export default props => {
       </Helmet>
       <Product backgroundColor={props.backgroundColor}>
         <main className="container">
-          <TabletOrMobile>
+          <XS_MD>
             <div className="row">
               <div className="col-xs-12">
                 <Title>
@@ -39,38 +38,38 @@ export default props => {
                 </Title>
               </div>
             </div>
-          </TabletOrMobile>
+          </XS_MD>
           <div className="row middle-lg">
             <div className="col-xs-12 col-md-7 col-lg-6">
-              <TabletOrMobile>
+              <XS_MD>
                 <Photos />
-              </TabletOrMobile>
-              <Desktop>
+              </XS_MD>
+              <LG>
                 <Photo
                   srcSet="img/bitmap_4@2x.jpg 600w, img/bitmap_4@3x.jpg 900w"
                   src="img/bitmap_4.jpg"
                   alt="Product photo"
                 />
-              </Desktop>
+              </LG>
             </div>
             <div className="col-xs-12 col-md-5 col-lg-6">
-              <Desktop>
+              <LG>
                 <Title>
                   {props.title}
                 </Title>
-              </Desktop>
+              </LG>
               <Info
                 priceValue={props.priceValue}
                 priceCurrency={props.priceCurrency}
                 vendorCode={props.vendorCode}
               />
               <Actions />
-              <Desktop>
+              <LG>
                 <DeliveryFeature
                   name="Free Next Day Delivery"
                   description="Order before 7pm Monday to Thursday for delivery the next day"
                 />
-              </Desktop>
+              </LG>
             </div>
           </div>
         </main>

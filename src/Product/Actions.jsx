@@ -1,6 +1,5 @@
 import React from "react";
-import Desktop from "./../common/Responsive/Desktop";
-import TabletOrMobile from "./../common/Responsive/TabletOrMobile";
+import {XS_MD, LG} from "../common/Responsive";
 import styled from "styled-components";
 import ColorSelector from "./Selectors/ColorSelector";
 import SizeSelector from "./Selectors/SizeSelector";
@@ -27,29 +26,29 @@ export default () => {
           <div className="col-xs-12 col-lg-6">
             <ColorSelector />
           </div>
-          <Desktop>
+          <LG>
             <div className="col-lg-6">
               <SizeSelector />
             </div>
-          </Desktop>
+          </LG>
         </div>
         <div className="row">
           <div className="col-xs-12 col-lg-6">
-            <TabletOrMobile>
+            <XS_MD>
               <PrimaryButton type="button">SELECT A SIZE</PrimaryButton>
-            </TabletOrMobile>
-            <Desktop>
+            </XS_MD>
+            <LG>
               <PrimaryButton type="button">ADD TO BAG</PrimaryButton>
-            </Desktop>
+            </LG>
           </div>
           <div className="col-xs-12 col-lg-6">
             <SecondaryButton type="button">FIND IN STORE</SecondaryButton>
           </div>
-          <TabletOrMobile>
+          <XS_MD>
             <div className="col-xs-12">
               <SizeHelpButton />
             </div>
-          </TabletOrMobile>
+          </XS_MD>
         </div>
       </div>
     </Actions>

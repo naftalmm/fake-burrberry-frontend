@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TabletOrDesktop from "./../common/Responsive/TabletOrDesktop";
+import {MD_LG} from "../common/Responsive";
 import Info from "./Info";
 import Help from "./Help";
 
@@ -44,9 +44,9 @@ const Button = styled.button`
 export default () => {
   return (
     <Footer>
-      <TabletOrDesktop>
+      <MD_LG>
         <Info />
-      </TabletOrDesktop>
+      </MD_LG>
       <div className="container">
         <div className="row">
           <div className="col-xs-12">

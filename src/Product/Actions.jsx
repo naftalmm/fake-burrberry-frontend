@@ -1,5 +1,5 @@
 import React from "react";
-import {XS_MD, LG} from "../common/Responsive";
+import {Xs_Md, Lg} from "../common/Responsive";
 import styled from "styled-components";
 import ColorSelector from "./Selectors/ColorSelector";
 import SizeSelector from "./Selectors/SizeSelector";
@@ -26,29 +26,29 @@ export default () => {
           <div className="col-xs-12 col-lg-6">
             <ColorSelector />
           </div>
-          <LG>
+          <Lg>
             <div className="col-lg-6">
               <SizeSelector />
             </div>
-          </LG>
+          </Lg>
         </div>
         <div className="row">
           <div className="col-xs-12 col-lg-6">
-            <XS_MD>
+            <Xs_Md>
               <PrimaryButton type="button">SELECT A SIZE</PrimaryButton>
-            </XS_MD>
-            <LG>
+            </Xs_Md>
+            <Lg>
               <PrimaryButton type="button">ADD TO BAG</PrimaryButton>
-            </LG>
+            </Lg>
           </div>
           <div className="col-xs-12 col-lg-6">
             <FindButton />
           </div>
-          <XS_MD>
+          <Xs_Md>
             <div className="col-xs-12">
               <SizeHelpButton />
             </div>
-          </XS_MD>
+          </Xs_Md>
         </div>
       </div>
     </Actions>

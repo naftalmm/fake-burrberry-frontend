@@ -1,6 +1,6 @@
 import React from "react";
 import { IntlProvider, addLocaleData } from "react-intl";
-import {XS, XS_MD, MD_LG, LG} from "./common/Responsive";
+import {Xs, Xs_Md, Md_Lg, Lg} from "./common/Responsive";
 import SectionHeader from "./common/SectionHeader";
 import Header from "./Header/";
 import Product from "./Product/";
@@ -23,9 +23,9 @@ export default () => {
     <IntlProvider locale="ru">
       <div>
         <Header />
-        <XS_MD>
+        <Xs_Md>
           <hr />
-        </XS_MD>
+        </Xs_Md>
 
         <Product
           backgroundColor="#d4bdad"
@@ -35,17 +35,17 @@ export default () => {
           vendorCode="39428531"
         />
 
-        <XS>
+        <Xs>
           <Accordion />
-        </XS>
-        <MD_LG>
+        </Xs>
+        <Md_Lg>
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-lg-4">
                 <SectionHeader>DESCRIPTION</SectionHeader>
                 <Description />
               </div>
-              <LG>
+              <Lg>
                 <div className="col-lg-8">
                   <Photo
                     srcSet="img/bitmap_5@2x.jpg 600w, img/bitmap_5@3x.jpg 900w"
@@ -53,23 +53,23 @@ export default () => {
                     alt="Product photo"
                   />
                 </div>
-              </LG>
+              </Lg>
             </div>
-            <LG>
+            <Lg>
               <Gallery />
-            </LG>
+            </Lg>
             <div className="row">
               <div className="col-md-12">
                 <Delivery />
               </div>
             </div>
           </div>
-        </MD_LG>
+        </Md_Lg>
 
         <Recommended />
-        <XS>
+        <Xs>
           <RecommendedMore />
-        </XS>
+        </Xs>
         <Footer />
       </div>
     </IntlProvider>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {XS_MD, LG} from "../common/Responsive";
+import {Xs_Md, Lg} from "../common/Responsive";
 import { Helmet } from "react-helmet";
 import Photo from "./Photo";
 import Photos from "./PhotosCarousel";
@@ -30,7 +30,7 @@ export default props => {
       </Helmet>
       <Product backgroundColor={props.backgroundColor}>
         <main className="container">
-          <XS_MD>
+          <Xs_Md>
             <div className="row">
               <div className="col-xs-12">
                 <Title>
@@ -38,38 +38,38 @@ export default props => {
                 </Title>
               </div>
             </div>
-          </XS_MD>
+          </Xs_Md>
           <div className="row middle-lg">
             <div className="col-xs-12 col-md-7 col-lg-6">
-              <XS_MD>
+              <Xs_Md>
                 <Photos />
-              </XS_MD>
-              <LG>
+              </Xs_Md>
+              <Lg>
                 <Photo
                   srcSet="img/bitmap_4@2x.jpg 600w, img/bitmap_4@3x.jpg 900w"
                   src="img/bitmap_4.jpg"
                   alt="Product photo"
                 />
-              </LG>
+              </Lg>
             </div>
             <div className="col-xs-12 col-md-5 col-lg-6">
-              <LG>
+              <Lg>
                 <Title>
                   {props.title}
                 </Title>
-              </LG>
+              </Lg>
               <Info
                 priceValue={props.priceValue}
                 priceCurrency={props.priceCurrency}
                 vendorCode={props.vendorCode}
               />
               <Actions />
-              <LG>
+              <Lg>
                 <DeliveryFeature
                   name="Free Next Day Delivery"
                   description="Order before 7pm Monday to Thursday for delivery the next day"
                 />
-              </LG>
+              </Lg>
             </div>
           </div>
         </main>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {MD_LG} from "./../common/Responsive";
+import {Md_Lg} from "./../common/Responsive";
 import SectionHeader from "./../common/SectionHeader";
 import DeliveryFeature from "./DeliveryFeature";
 
@@ -17,7 +17,7 @@ export default () => {
   return (
     <div className="box">
       <div className="row middle-lg">
-        <MD_LG>
+        <Md_Lg>
           <div className="col-md-7">
             <Image
               src="img/delivery.jpg"
@@ -25,12 +25,12 @@ export default () => {
               alt="Product boxing"
             />
           </div>
-        </MD_LG>
+        </Md_Lg>
         <div className="col-lg-1" />
         <div className="col-xs-12 col-md-5 col-lg-4">
-          <MD_LG>
+          <Md_Lg>
             <SectionHeader>DELIVERY</SectionHeader>
-          </MD_LG>
+          </Md_Lg>
           <DeliveryFeature
             name="Free Next Day Delivery"
             description="Order before 7pm Monday to Thursday for delivery the next day"

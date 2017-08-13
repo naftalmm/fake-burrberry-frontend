@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Xs_Md, Lg} from "../common/Responsive";
+import {XsMd, Lg} from "../common/Responsive";
 import { Helmet } from "react-helmet";
 import Photo from "./Photo";
 import Photos from "./PhotosCarousel";
@@ -30,7 +30,7 @@ export default props => {
       </Helmet>
       <Product backgroundColor={props.backgroundColor}>
         <main className="container">
-          <Xs_Md>
+          <XsMd>
             <div className="row">
               <div className="col-xs-12">
                 <Title>
@@ -38,12 +38,12 @@ export default props => {
                 </Title>
               </div>
             </div>
-          </Xs_Md>
+          </XsMd>
           <div className="row middle-lg">
             <div className="col-xs-12 col-md-7 col-lg-6">
-              <Xs_Md>
+              <XsMd>
                 <Photos />
-              </Xs_Md>
+              </XsMd>
               <Lg>
                 <Photo
                   srcSet="img/bitmap_4@2x.jpg 600w, img/bitmap_4@3x.jpg 900w"

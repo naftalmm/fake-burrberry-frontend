@@ -1,6 +1,6 @@
 import React from "react";
 import { IntlProvider, addLocaleData } from "react-intl";
-import {Xs, Xs_Md, Md_Lg, Lg} from "./common/Responsive";
+import {Xs, XsMd, MdLg, Lg} from "./common/Responsive";
 import SectionHeader from "./common/SectionHeader";
 import Header from "./Header/";
 import Product from "./Product/";
@@ -23,9 +23,9 @@ export default () => {
     <IntlProvider locale="ru">
       <div>
         <Header />
-        <Xs_Md>
+        <XsMd>
           <hr />
-        </Xs_Md>
+        </XsMd>
 
         <Product
           backgroundColor="#d4bdad"
@@ -38,7 +38,7 @@ export default () => {
         <Xs>
           <Accordion />
         </Xs>
-        <Md_Lg>
+        <MdLg>
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-lg-4">
@@ -64,7 +64,7 @@ export default () => {
               </div>
             </div>
           </div>
-        </Md_Lg>
+        </MdLg>
 
         <Recommended />
         <Xs>

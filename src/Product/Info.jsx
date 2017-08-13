@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import FormattedPrice from "./FormattedPrice";
 import VendorCode from "./VendorCode";
-import {Xs_Md} from "../common/Responsive";
+import {XsMd} from "../common/Responsive";
 
 const Info = styled.div`
   display: flex;
@@ -34,9 +34,9 @@ export default props => {
   return (
     <Info>
       <Price value={props.priceValue} currency={props.priceCurrency} />
-      <Xs_Md>
+      <XsMd>
         <VendorCode value={props.vendorCode} />
-      </Xs_Md>
+      </XsMd>
     </Info>
   );
 };

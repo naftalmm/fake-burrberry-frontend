@@ -1,5 +1,5 @@
 import React from "react";
-import {Xs_Md, Lg} from "../common/Responsive";
+import {XsMd, Lg} from "../common/Responsive";
 import styled from "styled-components";
 import ColorSelector from "./Selectors/ColorSelector";
 import SizeSelector from "./Selectors/SizeSelector";
@@ -34,9 +34,9 @@ export default () => {
         </div>
         <div className="row">
           <div className="col-xs-12 col-lg-6">
-            <Xs_Md>
+            <XsMd>
               <PrimaryButton type="button">SELECT A SIZE</PrimaryButton>
-            </Xs_Md>
+            </XsMd>
             <Lg>
               <PrimaryButton type="button">ADD TO BAG</PrimaryButton>
             </Lg>
@@ -44,11 +44,11 @@ export default () => {
           <div className="col-xs-12 col-lg-6">
             <FindButton />
           </div>
-          <Xs_Md>
+          <XsMd>
             <div className="col-xs-12">
               <SizeHelpButton />
             </div>
-          </Xs_Md>
+          </XsMd>
         </div>
       </div>
     </Actions>

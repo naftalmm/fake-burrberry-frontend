@@ -11,7 +11,7 @@ export const Xs = ({ children }) =>
     {children}
   </Responsive>;
 
-export const Xs_Md = ({ children }) =>
+export const XsMd = ({ children }) =>
   <Responsive maxWidth={breakpoints.lg - 1}>
     {children}
   </Responsive>;
@@ -21,7 +21,7 @@ export const Md = ({ children }) =>
     {children}
   </Responsive>;
 
-export const Md_Lg = ({ children }) =>
+export const MdLg = ({ children }) =>
   <Responsive minWidth={breakpoints.md}>
     {children}
   </Responsive>;

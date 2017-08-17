@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import SizeButton from "./SizeButton";
-import SizeHelpButton from "./../../SizeHelpButton";
-import CurrentSelectionName from "./../CurrentSelectionName";
+import React from 'react';
+import styled from 'styled-components';
+import SizeButton from './SizeButton';
+import SizeHelpButton from './../../SizeHelpButton';
+import CurrentSelectionName from './../CurrentSelectionName';
 
 const SizeSelector = styled.div`
   display: flex;
@@ -22,19 +22,16 @@ const Wrapper = styled.div`
   align-items: baseline;
 `;
 
-export default () => {
-  return (
-    <SizeSelector>
-      <Wrapper>
-        <CurrentSelectionName label="Size" value="XL" />
-        <SizeHelpButton />
-      </Wrapper>
-      <SizePallete>
-        <SizeButton>S</SizeButton>
-        <SizeButton>M</SizeButton>
-        <SizeButton>L</SizeButton>
-        <SizeButton>XL</SizeButton>
-      </SizePallete>
-    </SizeSelector>
-  );
-};
+export default () =>
+  (<SizeSelector>
+    <Wrapper>
+      <CurrentSelectionName label="Size" value="XL" />
+      <SizeHelpButton />
+    </Wrapper>
+    <SizePallete>
+      <SizeButton>S</SizeButton>
+      <SizeButton>M</SizeButton>
+      <SizeButton>L</SizeButton>
+      <SizeButton>XL</SizeButton>
+    </SizePallete>
+  </SizeSelector>);

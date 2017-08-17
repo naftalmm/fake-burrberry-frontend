@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import {MdLg} from "../common/Responsive";
-import Info from "./Info";
-import Help from "./Help";
+import React from 'react';
+import styled from 'styled-components';
+import { MdLg } from '../common/Responsive';
+import Info from './Info';
+import Help from './Help';
 
 const Footer = styled.footer`
   padding-top: 2rem;
@@ -41,25 +41,20 @@ const Button = styled.button`
   background-color: transparent;
 `;
 
-export default () => {
-  return (
-    <Footer>
-      <MdLg>
-        <Info />
-      </MdLg>
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12">
-            <ButtonsWrapper>
-              <Button type="button">
-                Shipping country: Russian Federation
-              </Button>
-              <Button type="button">Language: English</Button>
-            </ButtonsWrapper>
-          </div>
+export default () =>
+  (<Footer>
+    <MdLg>
+      <Info />
+    </MdLg>
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-12">
+          <ButtonsWrapper>
+            <Button type="button">Shipping country: Russian Federation</Button>
+            <Button type="button">Language: English</Button>
+          </ButtonsWrapper>
         </div>
       </div>
-      <Help />
-    </Footer>
-  );
-};
+    </div>
+    <Help />
+  </Footer>);

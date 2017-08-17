@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import ColorButton from "./ColorButton";
-import CurrentSelectionName from "./../CurrentSelectionName";
+import React from 'react';
+import styled from 'styled-components';
+import ColorButton from './ColorButton';
+import CurrentSelectionName from './../CurrentSelectionName';
 
 const ColorPallete = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const ColorPallete = styled.div`
 
   @media only screen and (min-width: 62rem) {
     padding-bottom: 1.5rem;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     border-bottom: none;
   }
 `;
@@ -24,14 +24,11 @@ const ColorSelector = styled.div`
   margin-top: 1rem;
 `;
 
-export default () => {
-  return (
-    <ColorSelector>
-      <CurrentSelectionName label="Colour" value="Honey" />
-      <ColorPallete>
-        <ColorButton color="black" isActive={false} />
-        <ColorButton color="honey" isActive={true} />
-      </ColorPallete>
-    </ColorSelector>
-  );
-};
+export default () =>
+  (<ColorSelector>
+    <CurrentSelectionName label="Colour" value="Honey" />
+    <ColorPallete>
+      <ColorButton colorName="black" colorHex="#232122" isActive={false} />
+      <ColorButton colorName="honey" colorHex="#cfa880" isActive />
+    </ColorPallete>
+  </ColorSelector>);

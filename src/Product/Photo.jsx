@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Image = styled.img`
   min-width: 300px;
@@ -11,11 +12,16 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
-export default (props) => {
-  return (
-    <picture>
-      <source media="(min-width: 768px)" srcSet={props.srcSet} />
-      <Image src={props.src} alt={props.alt} />
-    </picture>
-  );
+const Photo = props =>
+  (<picture>
+    <source media="(min-width: 768px)" srcSet={props.srcSet} />
+    <Image src={props.src} alt={props.alt} />
+  </picture>);
+
+Photo.propTypes = {
+  srcSet: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
+
+export default Photo;

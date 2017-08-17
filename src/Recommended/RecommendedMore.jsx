@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import SectionHeader from "../common/SectionHeader";
+import React from 'react';
+import styled from 'styled-components';
+import SectionHeader from '../common/SectionHeader';
 
 const RecommendedMore = styled.section`
   margin-left: 1rem;
@@ -19,19 +19,16 @@ const Link = styled.a`
   color: #171717;
 `;
 
-export default () => {
-  return (
-    <RecommendedMore>
-      <div className="container">
-        <div className="row">
-          <div className="col-xs">
-            <SectionHeader>MORE FOR YOU</SectionHeader>
-            <Link>Men’s Black Trench Coats</Link>
-            <Link>Men’s Short Trench Coats</Link>
-            <Link>Men’s Long Trench Coats</Link>
-          </div>
+export default () =>
+  (<RecommendedMore>
+    <div className="container">
+      <div className="row">
+        <div className="col-xs">
+          <SectionHeader>MORE FOR YOU</SectionHeader>
+          <Link>Men’s Black Trench Coats</Link>
+          <Link>Men’s Short Trench Coats</Link>
+          <Link>Men’s Long Trench Coats</Link>
         </div>
       </div>
-    </RecommendedMore>
-  );
-};
+    </div>
+  </RecommendedMore>);

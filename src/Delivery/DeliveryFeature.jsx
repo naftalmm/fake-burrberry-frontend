@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Name = styled.h3`
   margin-top: 0;
@@ -23,13 +24,21 @@ const Description = styled.p`
   color: #171717;
 `;
 
-const DeliveryFeature = styled.div`margin-bottom: 1.5rem;`;
+const DeliveryFeatureWrapper = styled.div`margin-bottom: 1.5rem;`;
 
-export default props => {
-  return (
-    <DeliveryFeature>
-      <Name>{props.name}</Name>
-      <Description>{props.description}</Description>
-    </DeliveryFeature>
-  );
+const DeliveryFeature = props =>
+  (<DeliveryFeatureWrapper>
+    <Name>
+      {props.name}
+    </Name>
+    <Description>
+      {props.description}
+    </Description>
+  </DeliveryFeatureWrapper>);
+
+DeliveryFeature.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
+
+export default DeliveryFeature;

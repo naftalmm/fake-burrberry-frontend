@@ -1,7 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const CurrentSelectionName = styled.p`
+const CurrentSelectionName = props =>
+  (<div>
+    {props.label}: <b>{props.value}</b>
+  </div>);
+
+CurrentSelectionName.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};
+
+export default styled(CurrentSelectionName)`
   margin: 0;
 
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -9,10 +20,3 @@ const CurrentSelectionName = styled.p`
   line-height: 1rem;
 `;
 
-export default props => {
-  return (
-    <CurrentSelectionName>
-      {props.label}: <b>{props.value}</b>
-    </CurrentSelectionName>
-  );
-};

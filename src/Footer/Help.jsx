@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Link = styled.a`
   margin-bottom: 2rem;
@@ -34,11 +34,8 @@ const Help = styled.div`
   }
 `;
 
-export default () => {
-  return (
-    <Help>
-      <Header>Need help?</Header>
-      <Link>Find out more and contact us</Link>
-    </Help>
-  );
-};
+export default () =>
+  (<Help>
+    <Header>Need help?</Header>
+    <Link>Find out more and contact us</Link>
+  </Help>);

@@ -1,17 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import FormattedPrice from "./../Product/FormattedPrice";
-
-const ProductCard = styled.a`
-  display: block;
-  margin-bottom: 2rem;
-  margin-right: .5rem;
-
-  @media only screen and (min-width: 48rem) {
-    margin-bottom: 0;
-    margin-right: 0;
-  }
-`;
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import FormattedPrice from './../Product/FormattedPrice';
 
 const Image = styled.img`
   in-width: 130px;
@@ -42,14 +32,31 @@ const Price = styled(FormattedPrice)`
   color: #999;
 `;
 
-export default props => {
-  return (
-    <ProductCard>
-      <Image src={props.src} alt={props.alt} />
-      <ProductName>
-        {props.name}
-      </ProductName>
-      <Price value={props.priceValue} currency={props.priceCurrency} />
-    </ProductCard>
-  );
+const ProductCard = props =>
+  (<a>
+    <Image src={props.src} alt={props.alt} />
+    <ProductName>
+      {props.name}
+    </ProductName>
+    <Price value={props.priceValue} currency={props.priceCurrency} />
+  </a>);
+
+
+ProductCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  priceValue: PropTypes.number.isRequired,
+  priceCurrency: PropTypes.string.isRequired,
 };
+
+export default styled(ProductCard)`
+  display: block;
+  margin-bottom: 2rem;
+  margin-right: .5rem;
+
+  @media only screen and (min-width: 48rem) {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+`;

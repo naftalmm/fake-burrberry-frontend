@@ -1,10 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import FormattedPrice from "./FormattedPrice";
-import VendorCode from "./VendorCode";
-import {XsMd} from "../common/Responsive";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import FormattedPrice from './FormattedPrice';
+import VendorCode from './VendorCode';
+import { XsMd } from '../common/Responsive';
 
-const Info = styled.div`
+const InfoWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -30,13 +31,18 @@ const Price = styled(FormattedPrice)`
   color: #111;
 `;
 
-export default props => {
-  return (
-    <Info>
-      <Price value={props.priceValue} currency={props.priceCurrency} />
-      <XsMd>
-        <VendorCode value={props.vendorCode} />
-      </XsMd>
-    </Info>
-  );
+const Info = props =>
+  (<InfoWrapper>
+    <Price value={props.priceValue} currency={props.priceCurrency} />
+    <XsMd>
+      <VendorCode value={props.vendorCode} />
+    </XsMd>
+  </InfoWrapper>);
+
+Info.propTypes = {
+  priceValue: PropTypes.number.isRequired,
+  priceCurrency: PropTypes.string.isRequired,
+  vendorCode: PropTypes.string.isRequired,
 };
+
+export default Info;

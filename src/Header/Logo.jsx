@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import logo from "../logo.svg";
+import React from 'react';
+import styled from 'styled-components';
+import logo from '../logo.svg';
 
 const Image = styled.img`
   width: 138px;
@@ -21,10 +21,7 @@ const Image = styled.img`
   }
 `;
 
-export default () => {
-  return (
-    <a href="/">
-      <Image src={logo} alt="Burberry Logo" />
-    </a>
-  );
-};
+export default () =>
+  (<a href="/">
+    <Image src={logo} alt="Burberry Logo" />
+  </a>);

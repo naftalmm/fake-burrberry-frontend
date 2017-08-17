@@ -1,29 +1,39 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import AccordionPaneHeader from "./AccordionPaneHeader";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import AccordionPaneHeader from './AccordionPaneHeader';
 
-const AccordionPane = styled.div`
+const AccordionPaneWrapper = styled.div`
   padding-top: 2rem;
   border-top: solid 1px #c6c6c6;
 `;
 
-const AccordionPaneEntry = styled.div`
-  ${props => !props.isOpened && css`display: none`};
-`;
+const AccordionPaneEntry = styled.div`${props => !props.isOpened && css`display: none`};`;
 
-export default props => {
-  return (
-    <AccordionPane className={props.className}>
-      <AccordionPaneHeader isOpened={props.isOpened} name={props.headerName} />
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12">
-            <AccordionPaneEntry isOpened={props.isOpened}>
-              {props.content}
-            </AccordionPaneEntry>
-          </div>
+const AccordionPane = props => (
+  <AccordionPaneWrapper className={props.className}>
+    <AccordionPaneHeader isOpened={props.isOpened} name={props.headerName} />
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-12">
+          <AccordionPaneEntry isOpened={props.isOpened}>
+            {props.content}
+          </AccordionPaneEntry>
         </div>
       </div>
-    </AccordionPane>
-  );
+    </div>
+  </AccordionPaneWrapper>
+);
+
+AccordionPane.defaultProps = {
+  className: '',
 };
+
+AccordionPane.propTypes = {
+  className: PropTypes.string,
+  isOpened: PropTypes.bool.isRequired,
+  headerName: PropTypes.string.isRequired,
+  content: PropTypes.element.isRequired,
+};
+
+export default AccordionPane;

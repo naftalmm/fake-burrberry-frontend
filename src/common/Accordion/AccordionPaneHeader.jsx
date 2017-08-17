@@ -1,8 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import triangle from "../../triangle.svg";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import triangle from '../../triangle.svg';
 
-const AccordionPaneHeader = styled.div`
+const AccordionPaneHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -10,7 +11,7 @@ const AccordionPaneHeader = styled.div`
 
   &:after {
     margin-right: 1rem;
-    transform: ${props => (props.isOpened ? "rotate(180deg)" : "none")};
+    transform: ${props => (props.isOpened ? 'rotate(180deg)' : 'none')};
     content: url(${triangle});
   }
 `;
@@ -34,16 +35,19 @@ const Header = styled.h2`
   color: #171717;
 `;
 
-export default props => {
-  return (
-    <AccordionPaneHeader
-      isOpened={props.isOpened}
-    >
-      <ButtonWrapper type="button">
-        <Header>
-          {props.name}
-        </Header>
-      </ButtonWrapper>
-    </AccordionPaneHeader>
-  );
+const AccordionPaneHeader = props => (
+  <AccordionPaneHeaderWrapper isOpened={props.isOpened}>
+    <ButtonWrapper type="button">
+      <Header>
+        {props.name}
+      </Header>
+    </ButtonWrapper>
+  </AccordionPaneHeaderWrapper>
+);
+
+AccordionPaneHeader.propTypes = {
+  isOpened: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
 };
+
+export default AccordionPaneHeader;

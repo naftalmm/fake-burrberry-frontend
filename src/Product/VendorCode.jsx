@@ -1,7 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const VendorCode = styled.p`
+const VendorCode = props =>
+  (<p>
+    Item {props.value}
+  </p>);
+
+
+VendorCode.propTypes = {
+  value: PropTypes.string.isRequired,
+};
+
+export default styled(VendorCode)`
   margin: 0;
 
   font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -9,11 +20,3 @@ const VendorCode = styled.p`
   line-height: 1rem;
   color: #171717;
 `;
-
-export default props => {
-  return (
-    <VendorCode>
-      Item {props.value}
-    </VendorCode>
-  );
-};

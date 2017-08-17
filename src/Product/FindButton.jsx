@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import SecondaryButton from "./SecondaryButton";
+import React from 'react';
+import styled from 'styled-components';
+import SecondaryButton from './SecondaryButton';
 
 const FindButton = styled(SecondaryButton)`
   margin-bottom: 1.5rem;
@@ -8,6 +8,4 @@ const FindButton = styled(SecondaryButton)`
   padding-bottom: 1rem;
 `;
 
-export default () => {
-  return <FindButton type="button">FIND IN STORE</FindButton>;
-};
+export default () => <FindButton type="button">FIND IN STORE</FindButton>;

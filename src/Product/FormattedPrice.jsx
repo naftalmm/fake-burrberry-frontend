@@ -8,7 +8,7 @@ const FormattedPrice = props =>
       // eslint-disable-next-line
       style="currency"
       currency={props.currency}
-      currencyDisplay="code"
+      currencyDisplay="symbol"
       value={props.value}
       minimumFractionDigits={0}
       maximumFractionDigits={0}

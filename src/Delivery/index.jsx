@@ -13,14 +13,15 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
+const { PUBLIC_URL } = process.env;
 export default () =>
   (<div className="box">
     <div className="row middle-lg">
       <MdLg>
         <div className="col-md-7">
           <Image
-            src="img/delivery.jpg"
-            srcSet="img/delivery@2x.jpg 2x, img/delivery@3x.jpg 3x"
+            src={`${PUBLIC_URL}/img/delivery.jpg`}
+            srcSet={`${PUBLIC_URL}/img/delivery@2x.jpg 2x, ${PUBLIC_URL}/img/delivery@3x.jpg 3x`}
             alt="Product boxing"
           />
         </div>

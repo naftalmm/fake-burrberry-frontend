@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SecondaryButton from './SecondaryButton';
+import SecondaryButton from '../../common/Buttons/SecondaryButton';
 
 const FindButton = styled(SecondaryButton)`
   margin-bottom: 1.5rem;

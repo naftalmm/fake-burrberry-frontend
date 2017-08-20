@@ -21,8 +21,8 @@ const ButtonsWrapper = styled.div`
   }
 
   @media only screen and (min-width: 62rem) {
-    margin-top: 2rem;
-    padding-bottom: 4rem;
+    margin-top: 2.25rem;
+    padding-bottom: 2rem;
   }
 `;
 
@@ -39,7 +39,13 @@ const Button = styled.button`
 
   border-style: none;
   background-color: transparent;
+
+  @media only screen and (min-width: 62rem) {
+    margin-right: 3rem;
+  }
 `;
+
+const SelectedLocale = styled.span`color: #171717;`;
 
 export default () =>
   (<Footer>
@@ -50,8 +56,12 @@ export default () =>
       <div className="row">
         <div className="col-xs-12">
           <ButtonsWrapper>
-            <Button type="button">Shipping country: Russian Federation</Button>
-            <Button type="button">Language: English</Button>
+            <Button type="button">
+              Shipping country: <SelectedLocale>Russian Federation</SelectedLocale>
+            </Button>
+            <Button type="button">
+              Language: <SelectedLocale>English</SelectedLocale>
+            </Button>
           </ButtonsWrapper>
         </div>
       </div>

@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { XsMd, Lg } from '../common/Responsive';
+import { XsMd, Lg } from '../../common/Responsive';
 import Photo from './Photo';
 import Photos from './PhotosCarousel';
-import Info from './Info';
-import Title from './Title';
+import Info from '../Info';
+import Title from '../Title';
 import Actions from './Actions';
-import DeliveryFeature from './../Delivery/DeliveryFeature';
+import DeliveryFeature from '../../Delivery/DeliveryFeature';
 
 const ProductWrapper = styled.div`
   @media only screen and (min-width: 48rem) {
@@ -21,7 +21,8 @@ const ProductWrapper = styled.div`
   }
 `;
 
-const Product = props =>
+const { PUBLIC_URL } = process.env;
+const Card = props =>
   (<div>
     <Helmet>
       <title>
@@ -46,8 +47,8 @@ const Product = props =>
             </XsMd>
             <Lg>
               <Photo
-                srcSet="img/bitmap_4@2x.jpg 600w, img/bitmap_4@3x.jpg 900w"
-                src="img/bitmap_4.jpg"
+                srcSet={`${PUBLIC_URL}/img/bitmap_4@2x.jpg 600w, ${PUBLIC_URL}/img/bitmap_4@3x.jpg 900w`}
+                src={`${PUBLIC_URL}/img/bitmap_4.jpg`}
                 alt="Product photo"
               />
             </Lg>
@@ -76,12 +77,11 @@ const Product = props =>
     </ProductWrapper>
   </div>);
 
-
-Product.defaultProps = {
+Card.defaultProps = {
   className: '',
 };
 
-Product.propTypes = {
+Card.propTypes = {
   title: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   priceValue: PropTypes.number.isRequired,
@@ -89,4 +89,4 @@ Product.propTypes = {
   vendorCode: PropTypes.string.isRequired,
 };
 
-export default Product;
+export default Card;

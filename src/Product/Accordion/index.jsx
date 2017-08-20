@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import AccordionPane from './AccordionPane';
-import Description from '../../Product/Description';
+import Description from '../Description';
 import Delivery from '../../Delivery/index';
 
 const LastAccordionPane = styled(AccordionPane)`

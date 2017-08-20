@@ -2,9 +2,9 @@
 import 'normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'flexboxgrid2/flexboxgrid2.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './../node_modules/flexboxgrid2/dist/flexboxgrid.min.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

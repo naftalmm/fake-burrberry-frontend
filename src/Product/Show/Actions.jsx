@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { XsMd, Lg } from '../common/Responsive';
-import ColorSelector from './Selectors/ColorSelector';
-import SizeSelector from './Selectors/SizeSelector';
-import PrimaryButton from './PrimaryButton';
+import { XsMd, Lg } from '../../common/Responsive';
+import ColorSelector from '../Selectors/ColorSelector/';
+import SizeSelector from '../Selectors/SizeSelector/';
+import PrimaryButton from '../../common/Buttons/PrimaryButton';
 import FindButton from './FindButton';
 import SizeHelpButton from './SizeHelpButton';
 

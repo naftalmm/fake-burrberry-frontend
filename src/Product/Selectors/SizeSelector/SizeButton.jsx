@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SecondaryButton from './../../SecondaryButton';
+import SecondaryButton from '../../../common/Buttons/SecondaryButton';
 
 export default styled(SecondaryButton)`
   padding: .5rem 1rem;

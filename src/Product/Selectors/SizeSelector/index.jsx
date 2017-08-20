@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SizeButton from './SizeButton';
-import SizeHelpButton from './../../SizeHelpButton';
+import SizeHelpButton from '../../Show/SizeHelpButton';
 import CurrentSelectionName from './../CurrentSelectionName';
 
 const SizeSelector = styled.div`

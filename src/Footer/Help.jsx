@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
-const Link = styled.a`
+const Link = styled(RouterLink)`
   margin-bottom: 2rem;
 
   font-family: Lora;
@@ -10,6 +11,7 @@ const Link = styled.a`
   line-height: 1.0625rem;
   text-align: left;
   color: #171717;
+  text-decoration: none;
 `;
 
 const Header = styled.h4`
@@ -34,8 +36,9 @@ const Help = styled.div`
   }
 `;
 
-export default () =>
-  (<Help>
+export default () => (
+  <Help>
     <Header>Need help?</Header>
-    <Link>Find out more and contact us</Link>
-  </Help>);
+    <Link to="">Find out more and contact us</Link>
+  </Help>
+);

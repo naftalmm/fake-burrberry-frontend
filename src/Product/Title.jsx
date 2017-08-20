@@ -13,8 +13,8 @@ export default styled.h1`
   color: #111111;
 
   @media only screen and (min-width: 48rem) {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     font-size: 1.5rem;
     line-height: 1.75rem;
   }

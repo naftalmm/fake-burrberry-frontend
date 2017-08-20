@@ -10,8 +10,8 @@ const AccordionPaneWrapper = styled.div`
 
 const AccordionPaneEntry = styled.div`${props => !props.isOpened && css`display: none`};`;
 
-const AccordionPane = props => (
-  <AccordionPaneWrapper className={props.className}>
+const AccordionPane = props =>
+  (<AccordionPaneWrapper className={props.className}>
     <AccordionPaneHeader isOpened={props.isOpened} name={props.headerName} />
     <div className="container">
       <div className="row">
@@ -22,8 +22,7 @@ const AccordionPane = props => (
         </div>
       </div>
     </div>
-  </AccordionPaneWrapper>
-);
+  </AccordionPaneWrapper>);
 
 AccordionPane.defaultProps = {
   className: '',

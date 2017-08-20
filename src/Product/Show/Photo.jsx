@@ -14,7 +14,7 @@ const Image = styled.img`
 
 const Photo = props =>
   (<picture>
-    <source media="(min-width: 768px)" srcSet={props.srcSet} />
+    <source media="(min-width: 48rem)" srcSet={props.srcSet} />
     <Image src={props.src} alt={props.alt} />
   </picture>);
 

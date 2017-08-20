@@ -18,27 +18,28 @@ const Image = styled.div`
   }
 `;
 
+const { PUBLIC_URL } = process.env;
 export default () =>
   (<div className="container">
     <Gallery className="row">
       <Image className="col-lg-4">
         <Photo
-          srcSet="img/bitmap_3@2x.jpg 600w, img/bitmap_3@3x.jpg 900w"
-          src="img/bitmap_3.jpg"
+          srcSet={`${PUBLIC_URL}/img/bitmap_3@2x.jpg 600w, ${PUBLIC_URL}/img/bitmap_3@3x.jpg 900w`}
+          src={`${PUBLIC_URL}/img/bitmap_3.jpg`}
           alt="Product photo"
         />
       </Image>
       <Image className="col-lg-4">
         <Photo
-          srcSet="img/bitmap@2x.jpg 600w, img/bitmap@3x.jpg 900w"
-          src="img/bitmap.jpg"
+          srcSet={`${PUBLIC_URL}/img/bitmap@2x.jpg 600w, ${PUBLIC_URL}/img/bitmap@3x.jpg 900w`}
+          src={`${PUBLIC_URL}/img/bitmap.jpg`}
           alt="Product photo"
         />
       </Image>
       <Image className="col-lg-4">
         <Photo
-          srcSet="img/bitmap_2@2x.jpg 600w, img/bitmap_2@3x.jpg 900w"
-          src="img/bitmap_2.jpg"
+          srcSet={`${PUBLIC_URL}/img/bitmap_2@2x.jpg 600w, ${PUBLIC_URL}/img/bitmap_2@3x.jpg 900w`}
+          src={`${PUBLIC_URL}/img/bitmap_2.jpg`}
           alt="Product photo"
         />
       </Image>

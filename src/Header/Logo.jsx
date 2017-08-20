@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../logo.svg';
+import { Link } from 'react-router-dom';
+import logo from './../assets/logo.svg';
 
 const Image = styled.img`
-  width: 138px;
-  height: 10px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  height: .75rem;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
 
   vertical-align: middle;
 
   @media only screen and (min-width: 48rem) {
+    height: 1rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
@@ -21,7 +22,8 @@ const Image = styled.img`
   }
 `;
 
-export default () =>
-  (<a href="/">
+export default () => (
+  <Link to="/">
     <Image src={logo} alt="Burberry Logo" />
-  </a>);
+  </Link>
+);

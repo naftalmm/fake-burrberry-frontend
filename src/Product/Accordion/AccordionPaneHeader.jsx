@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import triangle from '../../triangle.svg';
+import triangle from '../../assets/triangle.svg';
 
 const AccordionPaneHeaderWrapper = styled.div`
   display: flex;

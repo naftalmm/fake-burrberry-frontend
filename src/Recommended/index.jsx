@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionHeader from '../common/SectionHeader';
-import ProductCard from './ProductCard';
+import Card from '../Product/Card';
 
 const Recommended = styled.section`
   margin-top: 3rem;
@@ -13,7 +13,6 @@ const Recommended = styled.section`
 
   @media only screen and (min-width: 62rem) {
     margin-top: 4rem;
-    margin-bottom: 4rem;
   }
 `;
 
@@ -33,8 +32,10 @@ export default () =>
       </div>
       <div className="row">
         <div className="col-xs-6 col-md-3">
-          <ProductCard
-            src="img/img1.jpg"
+          <Card
+            id={1}
+            to="/men/coats/1"
+            src={'https://assets.burberry.com/is/image/Burberryltd/f51a470fc157e3014a115c64276c2e124d9fc477.jpg'}
             alt="Recommended product photo"
             name="Emroided Hooded"
             priceValue={27000}
@@ -42,8 +43,10 @@ export default () =>
           />
         </div>
         <div className="col-xs-6 col-md-3">
-          <ProductCard
-            src="img/img2.jpg"
+          <Card
+            id={2}
+            to="/men/coats/2"
+            src={'https://assets.burberry.com/is/image/Burberryltd/eb872d02449c4050916c9eaf44e266bfdbd32304.jpg'}
             alt="Recommended product photo"
             name="Relaxed Fit Stretch Jeans"
             priceValue={22500}
@@ -51,8 +54,10 @@ export default () =>
           />
         </div>
         <div className="col-xs-6 col-md-3">
-          <ProductCard
-            src="img/img3.jpg"
+          <Card
+            id={3}
+            to="/men/coats/3"
+            src={'https://assets.burberry.com/is/image/Burberryltd/cfaeb1b3c79aeee09dfda4e26a9fb3f4525df542.jpg'}
             alt="Recommended product photo"
             name="Leather and House Check"
             priceValue={120000}
@@ -60,8 +65,10 @@ export default () =>
           />
         </div>
         <div className="col-xs-6 col-md-3">
-          <ProductCard
-            src="img/img4.jpg"
+          <Card
+            id={4}
+            to="/men/coats/4"
+            src={'https://assets.burberry.com/is/image/Burberryltd/b33127f06e6c404cc3168645e099a9eb71aeca9c.jpg'}
             alt="Recommended product photo"
             name="Leather Wingtip Check"
             priceValue={46000}

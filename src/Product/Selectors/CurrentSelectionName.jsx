@@ -3,11 +3,16 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const CurrentSelectionName = props =>
-  (<div>
+  (<div className={props.className}>
     {props.label}: <b>{props.value}</b>
   </div>);
 
+CurrentSelectionName.defaultProps = {
+  className: '',
+};
+
 CurrentSelectionName.propTypes = {
+  className: PropTypes.string,
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };

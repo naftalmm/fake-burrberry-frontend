@@ -23,3 +23,9 @@ deploy:
     script: now alias $(now build --public --name burberry-fake-shop-for-study  -t=$NOW_TOKEN) $URL -t=$NOW_TOKEN
     on:
       branch: master
+
+  - provider: script
+    skip_cleanup: true
+    script: now alias $(now build --public --name burberry-fake-shop-for-study  -t=$NOW_TOKEN) $URL_STAGED -t=$NOW_TOKEN
+    on:
+      branch: feat*

@@ -9,20 +9,26 @@ const ButtonWrapper = styled.button`
 
   border-radius: 50%;
   border: solid 1px ${props => (props.isActive ? '#232122' : 'transparent')};
-  background-color: ${props => (props.colorHex)};
+  background-color: ${props => props.colorHex};
+  cursor: pointer;
 `;
 
-const Button = props =>
-  (<ButtonWrapper type="button" isActive={props.isActive} colorHex={props.colorHex}>
-    <span hidden>
-      Change colour to ${props.colorName}
-    </span>
-  </ButtonWrapper>);
+const Button = props => (
+  <ButtonWrapper
+    type="button"
+    isActive={props.isActive}
+    colorHex={props.colorHex}
+    onClick={props.onClick}
+  >
+    <span hidden>Change colour to ${props.colorName}</span>
+  </ButtonWrapper>
+);
 
 Button.propTypes = {
   colorName: PropTypes.string.isRequired,
   colorHex: PropTypes.string.isRequired,
   isActive: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Button;

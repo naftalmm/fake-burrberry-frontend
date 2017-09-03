@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import SubHeader from './SubHeader';
@@ -9,13 +9,13 @@ import TextButton from '../../common/Buttons/TextButton';
 import Text from './../List/Text';
 
 const Button = styled(TextButton)`
-  padding: .5rem .25 rem;
+  padding: 0.5rem 0.25 rem;
   border-bottom: solid 1px #171717;
 `;
 
 const Link = styled(RouterLink)`
   border-bottom: solid 1px #171717;
-  
+
   color: #171717;
   text-decoration: none;
 `;
@@ -227,25 +227,55 @@ const sections = {
   },
 };
 
-const LineWrapper = (props) => {
-  const sectionName = props.match.params.section;
-  // Stub for sections which are not done yet
-  const section = sections[sectionName] == null ? sections.men : sections[sectionName];
-  return (
-    <div>
-      <SubHeader title={section.title} text={section.text} />
-      <div className="container">
-        {section.categories[0]}
-        <Delimiter />
-        {section.categories[1]}
+const Overlay = styled.div`
+  position: relative;
+
+  ${props =>
+    props.isToggleOn &&
+    css`
+      &:after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: #000;
+        content: '';
+      }
+    `};
+`;
+
+class List extends Component {
+  static propTypes = {
+    match: PropTypes.objectOf(PropTypes.any).isRequired,
+  };
+
+  state = { isOverlayToggleOn: false };
+
+  handleOverlayToggle = isOverlayToggleOn => this.setState({ isOverlayToggleOn });
+
+  render() {
+    const sectionName = this.props.match.params.section;
+    // Stub for sections which are not done yet
+    const section = sections[sectionName] == null ? sections.men : sections[sectionName];
+    return (
+      <div>
+        <SubHeader
+          title={section.title}
+          text={section.text}
+          handleDropdownButtonToggle={this.handleOverlayToggle}
+        />
+        <Overlay isToggleOn={this.state.isOverlayToggleOn}>
+          <div className="container">
+            {section.categories[0]}
+            <Delimiter />
+            {section.categories[1]}
+          </div>
+          <ShowMore currentlyShownCards={8} totalCards={17} />
+        </Overlay>
       </div>
-      <ShowMore currentlyShownCards={8} totalCards={17} />
-    </div>
-  );
-};
+    );
+  }
+}
 
-LineWrapper.propTypes = {
-  match: PropTypes.objectOf(PropTypes.any).isRequired,
-};
-
-export default LineWrapper;
+export default List;

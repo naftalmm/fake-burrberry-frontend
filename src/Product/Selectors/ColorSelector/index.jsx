@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import ColorButton from './ColorButton';
 import CurrentSelectionName from './../CurrentSelectionName';
 
-const ColorPallete = styled.div`
+const ColorPalette = styled.div`
   display: flex;
   padding-top: 1rem;
   padding-bottom: 2rem;
@@ -18,17 +18,43 @@ const ColorPallete = styled.div`
   }
 `;
 
-const ColorSelector = styled.div`
+const ColorSelectorWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 `;
 
-export default () =>
-  (<ColorSelector>
-    <CurrentSelectionName label="Colour" value="Honey" />
-    <ColorPallete>
-      <ColorButton colorName="black" colorHex="#232122" isActive={false} />
-      <ColorButton colorName="honey" colorHex="#cfa880" isActive />
-    </ColorPallete>
-  </ColorSelector>);
+const colors = [
+  { colorName: 'Honey', colorHex: '#cfa880' },
+  { colorName: 'Black', colorHex: '#232122' },
+];
+
+class ColorSelector extends Component {
+  state = { selectedColorIndex: 0 };
+
+  setSelectedColorIndex = selectedColorIndex => this.setState({ selectedColorIndex });
+
+  render() {
+    return (
+      <ColorSelectorWrapper>
+        <CurrentSelectionName
+          label="Colour"
+          value={colors[this.state.selectedColorIndex].colorName}
+        />
+        <ColorPalette>
+          {colors.map((color, index) => (
+            <ColorButton
+              colorName={color.colorName}
+              colorHex={color.colorHex}
+              isActive={this.state.selectedColorIndex === index}
+              key={color.colorName}
+              onClick={() => this.setSelectedColorIndex(index)}
+            />
+          ))}
+        </ColorPalette>
+      </ColorSelectorWrapper>
+    );
+  }
+}
+
+export default ColorSelector;

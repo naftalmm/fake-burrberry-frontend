@@ -1,30 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Logo from './Logo';
 import { Xs, MdLg } from './../common/Responsive';
 import Hamburger from './Hamburger';
-import TextButton from '../common/Buttons/TextButton';
+import LocationSelector from './ShopLocationSelector';
 import TabGroup from './../common/TabGroup/';
-import arrow from './../assets/arrow.svg';
 
-const SelectButton = styled(TextButton)`
-  color: #999;
-
-  &:after {
-    margin-left: .5rem;
-    content: url(${arrow});
-  }
-`;
-
-export default () =>
-  (<div className="container">
-    <div className="row start-xs middle-xs">
+const Header = props => (
+  <div className="container">
+    <div className="row start-xs">
       <div className="col-xs-1 col-md-4">
         <Xs>
-          <Hamburger />
+          <Hamburger isSideNavOpened={props.isSideNavOpened} onClick={props.handleSideNavToggle} />
         </Xs>
         <MdLg>
-          <SelectButton>Shopping in: United Kingdom (£)</SelectButton>
+          <LocationSelector />
         </MdLg>
       </div>
       <div className="col-xs-10 col-md-4">
@@ -42,4 +32,12 @@ export default () =>
         <TabGroup />
       </MdLg>
     </div>
-  </div>);
+  </div>
+);
+
+Header.propTypes = {
+  isSideNavOpened: PropTypes.bool.isRequired,
+  handleSideNavToggle: PropTypes.func.isRequired,
+};
+
+export default Header;

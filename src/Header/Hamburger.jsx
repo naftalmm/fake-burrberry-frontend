@@ -1,16 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 import hamburger from './../assets/hamburger.svg';
 
-const Button = styled.button`
+const Button = props => (
+  <button type="button" className={props.className} onClick={props.onClick}>
+    <img src={hamburger} alt="Open menu" />
+  </button>
+);
+
+Button.defaultProps = {
+  className: '',
+};
+
+Button.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+};
+
+export default styled(Button)`
   padding: 0;
-  margin: 0;
+  margin-top: 1rem;
 
   background: none;
   border: none;
+  cursor: pointer;
+  ${props => props.isSideNavOpened && css`pointer-events: none;`};
 `;
-
-export default () =>
-  (<Button type="button">
-    <img src={hamburger} alt="Open menu" />
-  </Button>);

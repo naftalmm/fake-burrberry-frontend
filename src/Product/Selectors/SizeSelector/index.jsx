@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import SizeButton from './SizeButton';
 import SizeHelpButton from '../../Show/SizeHelpButton';
 import CurrentSelectionName from './../CurrentSelectionName';
 
-const SizeSelector = styled.div`
+const SizeSelectorWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -22,16 +22,34 @@ const Wrapper = styled.div`
   align-items: baseline;
 `;
 
-export default () =>
-  (<SizeSelector>
-    <Wrapper>
-      <CurrentSelectionName label="Size" value="XL" />
-      <SizeHelpButton />
-    </Wrapper>
-    <SizePallete>
-      <SizeButton>S</SizeButton>
-      <SizeButton>M</SizeButton>
-      <SizeButton>L</SizeButton>
-      <SizeButton>XL</SizeButton>
-    </SizePallete>
-  </SizeSelector>);
+const sizes = ['S', 'M', 'L', 'XL'];
+
+class SizeSelector extends Component {
+  state = { selectedSizeIndex: 0 };
+
+  setSelectedSizeIndex = selectedSizeIndex => this.setState({ selectedSizeIndex });
+
+  render() {
+    return (
+      <SizeSelectorWrapper>
+        <Wrapper>
+          <CurrentSelectionName label="Size" value={sizes[this.state.selectedSizeIndex]} />
+          <SizeHelpButton />
+        </Wrapper>
+        <SizePallete>
+          {sizes.map((size, index) => (
+            <SizeButton
+              key={size}
+              isSelected={index === this.state.selectedSizeIndex}
+              onClick={() => this.setSelectedSizeIndex(index)}
+            >
+              {size}
+            </SizeButton>
+          ))}
+        </SizePallete>
+      </SizeSelectorWrapper>
+    );
+  }
+}
+
+export default SizeSelector;

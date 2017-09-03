@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import { FormattedPlural } from 'react-intl';
 import FormattedPrice from './FormattedPrice';
-import Heart from '../assets/Heart';
+import Heart from '../common/Buttons/AddToFavouritesButton';
 
 const Image = styled.img`
   margin-bottom: 1rem;

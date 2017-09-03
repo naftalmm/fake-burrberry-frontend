@@ -11,4 +11,5 @@ export default styled.button`
   border-radius: 2px;
   background-color: transparent;
   border: solid 1px #171717;
+  cursor: pointer
 `;

@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { MdLg } from '../common/Responsive';
 import Info from './Info';
 import Help from './Help';
+import ShippingLocationSelector from './ShippingLocationSelector';
+import LanguageSelector from './LanguageSelector';
+
 
 const Footer = styled.footer`
   padding-top: 2rem;
@@ -26,26 +29,6 @@ const ButtonsWrapper = styled.div`
   }
 `;
 
-const Button = styled.button`
-  padding: 0;
-  margin-right: 1.5rem;
-  margin-bottom: 1rem;
-  align-self: left;
-
-  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: .75rem;
-  line-height: 1rem;
-  color: #999;
-
-  border-style: none;
-  background-color: transparent;
-
-  @media only screen and (min-width: 62rem) {
-    margin-right: 3rem;
-  }
-`;
-
-const SelectedLocale = styled.span`color: #171717;`;
 
 export default () =>
   (<Footer>
@@ -56,12 +39,8 @@ export default () =>
       <div className="row">
         <div className="col-xs-12">
           <ButtonsWrapper>
-            <Button type="button">
-              Shipping country: <SelectedLocale>Russian Federation</SelectedLocale>
-            </Button>
-            <Button type="button">
-              Language: <SelectedLocale>English</SelectedLocale>
-            </Button>
+            <ShippingLocationSelector />
+            <LanguageSelector />
           </ButtonsWrapper>
         </div>
       </div>

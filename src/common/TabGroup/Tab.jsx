@@ -23,12 +23,13 @@ const TabStyled = styled(NavLink)`
   }
 `;
 
-const Tab = props =>
-  (<TabStyled
-    to={props.to}
+const Tab = ({ to, children }) => (
+  <TabStyled
+    to={to}
   >
-    {props.children}
-  </TabStyled>);
+    {children}
+  </TabStyled>
+);
 
 Tab.propTypes = {
   to: PropTypes.string.isRequired,

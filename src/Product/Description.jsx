@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Description = props =>
-  (<div className={props.className}>
+const Description = ({ className }) => (
+  <div className={className}>
     <p>A refined car coat crafted in protective cotton gabardine.</p>
     <p>
       Invented by Thomas Burberry in 1879, cotton gabardine is a tightly woven and breathable fabric
@@ -25,7 +25,8 @@ const Description = props =>
       <li>Made in Europe</li>
       <li>Item 39428531</li>
     </ul>
-  </div>);
+  </div>
+);
 
 Description.defaultProps = {
   className: '',

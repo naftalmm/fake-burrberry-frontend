@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import SizeButton from './SizeButton';
 import SizeHelpButton from '../../Show/SizeHelpButton';
-import CurrentSelectionName from './../CurrentSelectionName';
+import CurrentSelectionName from '../CurrentSelectionName';
 
 const SizeSelectorWrapper = styled.div`
   display: flex;
@@ -30,17 +30,18 @@ class SizeSelector extends Component {
   setSelectedSizeIndex = selectedSizeIndex => this.setState({ selectedSizeIndex });
 
   render() {
+    const { selectedSizeIndex } = this.state;
     return (
       <SizeSelectorWrapper>
         <Wrapper>
-          <CurrentSelectionName label="Size" value={sizes[this.state.selectedSizeIndex]} />
+          <CurrentSelectionName label="Size" value={sizes[selectedSizeIndex]} />
           <SizeHelpButton />
         </Wrapper>
         <SizePallete>
           {sizes.map((size, index) => (
             <SizeButton
               key={size}
-              isSelected={index === this.state.selectedSizeIndex}
+              isSelected={index === selectedSizeIndex}
               onClick={() => this.setSelectedSizeIndex(index)}
             >
               {size}

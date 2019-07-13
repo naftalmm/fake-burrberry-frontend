@@ -45,11 +45,20 @@ class ShopLocationSelector extends Component {
   setSelectedLocationIndex = selectedLocationIndex => this.setState({ selectedLocationIndex });
 
   render() {
+    const { selectedLocationIndex } = this.state;
     return (
       <ShopLocationSelectorWrapper>
-        <SelectButton>Shopping in: {locations[this.state.selectedLocationIndex]}</SelectButton>
+        <SelectButton>
+          Shopping in:
+          {locations[selectedLocationIndex]}
+        </SelectButton>
         <Select onChange={event => this.setSelectedLocationIndex(event.target.selectedIndex)}>
-          {locations.map(location => <option key={location}>Shopping in: {location}</option>)}
+          {locations.map(location => (
+            <option key={location}>
+              Shopping in:
+              {location}
+            </option>
+          ))}
         </Select>
       </ShopLocationSelectorWrapper>
     );

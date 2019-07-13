@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import enhanceWithClickOutside from 'react-click-outside';
 import styled, { css } from 'styled-components';
-import Logo from './../Header/Logo';
+import Logo from '../Header/Logo';
 import SubNavigation from './SubNavigation';
 import arrow from '../assets/arrow.svg';
 import SelectorButton from './SelectorButton';
@@ -17,9 +18,8 @@ const SideNavWrapper = styled.nav`
 `;
 
 const MainNavigation = styled.div`transition-duration: 0.25s;
-${props =>
-    props.isShiftedLeft &&
-    css`
+${props => props.isShiftedLeft
+    && css`
       transform: translate3d(-274px, 0, 0);
     `};
   `;
@@ -146,19 +146,21 @@ class SideNav extends Component {
     subNavActiveSectionIndex: undefined,
   };
 
-  setSubNavActiveSectionIndex = subNavActiveSectionIndex =>
-    this.setState({ subNavActiveSectionIndex });
+  setSubNavActiveSectionIndex =
+    subNavActiveSectionIndex => this.setState({ subNavActiveSectionIndex });
 
   handleClickOutside() {
-    if (this.props.isSideNavOpened) {
-      this.props.onToggle(false);
+    const { isSideNavOpened, onToggle } = this.props;
+    if (isSideNavOpened) {
+      onToggle(false);
     }
   }
 
   render() {
+    const { subNavActiveSectionIndex } = this.state;
     return (
       <SideNavWrapper>
-        <MainNavigation isShiftedLeft={this.state.subNavActiveSectionIndex !== undefined}>
+        <MainNavigation isShiftedLeft={subNavActiveSectionIndex !== undefined}>
           <div className="container">
             <div className="row center-xs">
               <div className="col-xs">
@@ -201,9 +203,9 @@ class SideNav extends Component {
             <SelectorButton options={['English', 'Russian']} />
           </SelectorButtons>
         </MainNavigation>
-        {this.state.subNavActiveSectionIndex !== undefined && (
+        {subNavActiveSectionIndex !== undefined && (
           <SubNavigation
-            navigation={subNavigation[this.state.subNavActiveSectionIndex]}
+            navigation={subNavigation[subNavActiveSectionIndex]}
             onClose={() => this.setSubNavActiveSectionIndex(undefined)}
           />
         )}

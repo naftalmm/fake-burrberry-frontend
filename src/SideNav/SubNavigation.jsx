@@ -67,16 +67,16 @@ const Link = styled(NavLink)`
   }
 `;
 
-const SubNavigation = props => (
+const SubNavigation = ({ onClose, navigation }) => (
   <SubNavigationStyled>
-    <BackButton type="button" onClick={props.onClose}>
+    <BackButton type="button" onClick={onClose}>
       Home
     </BackButton>
-    <Header image={props.navigation.image}>
-      <Title>{props.navigation.title}</Title>
+    <Header image={navigation.image}>
+      <Title>{navigation.title}</Title>
     </Header>
     <Links>
-      {props.navigation.links.map(link => (
+      {navigation.links.map(link => (
         <Link to={link.url} key={link.url}>
           {link.title}
         </Link>

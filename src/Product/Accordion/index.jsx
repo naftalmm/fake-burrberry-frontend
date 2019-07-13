@@ -8,8 +8,9 @@ const LastAccordionPane = styled(AccordionPane)`
     border-bottom: solid 1px #c6c6c6;
 `;
 
-export default () =>
-  (<section>
+export default () => (
+  <section>
     <AccordionPane headerName="DESCRIPTION" isOpened content={<Description />} />
     <LastAccordionPane headerName="DELIVERY" isOpened={false} content={<Delivery />} />
-  </section>);
+  </section>
+);

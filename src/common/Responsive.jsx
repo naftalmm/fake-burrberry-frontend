@@ -7,49 +7,56 @@ const breakpoints = {
   lg: 992,
 };
 
-const Xs = props =>
-  (<Responsive maxWidth={breakpoints.md - 1}>
-    {props.children}
-  </Responsive>);
+const Xs = ({ children }) => (
+  <Responsive maxWidth={breakpoints.md - 1}>
+    {children}
+  </Responsive>
+);
 
 Xs.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-const XsMd = props =>
-  (<Responsive maxWidth={breakpoints.lg - 1}>
-    {props.children}
-  </Responsive>);
+const XsMd = ({ children }) => (
+  <Responsive maxWidth={breakpoints.lg - 1}>
+    {children}
+  </Responsive>
+);
 
 XsMd.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-const Md = props =>
-  (<Responsive minWidth={breakpoints.md} maxWidth={breakpoints.lg - 1}>
-    {props.children}
-  </Responsive>);
+const Md = ({ children }) => (
+  <Responsive minWidth={breakpoints.md} maxWidth={breakpoints.lg - 1}>
+    {children}
+  </Responsive>
+);
 
 Md.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-const MdLg = props =>
-  (<Responsive minWidth={breakpoints.md}>
-    {props.children}
-  </Responsive>);
+const MdLg = ({ children }) => (
+  <Responsive minWidth={breakpoints.md}>
+    {children}
+  </Responsive>
+);
 
 MdLg.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-const Lg = props =>
-  (<Responsive minWidth={breakpoints.lg}>
-    {props.children}
-  </Responsive>);
+const Lg = ({ children }) => (
+  <Responsive minWidth={breakpoints.lg}>
+    {children}
+  </Responsive>
+);
 
 Lg.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-export { Xs, XsMd, Md, MdLg, Lg };
+export {
+  Xs, XsMd, Md, MdLg, Lg,
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Heart = props => (
+const Heart = ({ fill }) => (
   <svg
     width="16px"
     height="15px"
@@ -18,7 +18,7 @@ const Heart = props => (
         id="path-1"
       />
     </defs>
-    <g id="Symbols" stroke="none" strokeWidth="1" fill={props.fill} fillRule="evenodd">
+    <g id="Symbols" stroke="none" strokeWidth="1" fill={fill} fillRule="evenodd">
       <g id="Icon-/-Like" transform="translate(1.000000, 1.000000)">
         <mask id="mask-2" fill="white">
           <use xlinkHref="#path-1" />

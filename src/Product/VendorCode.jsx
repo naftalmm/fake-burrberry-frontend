@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const VendorCode = props =>
-  (<p className={props.className}>
-    Item {props.value}
-  </p>);
+const VendorCode = ({ className, value }) => (
+  <p className={className}>
+    Item
+    {' '}
+    {value}
+  </p>
+);
 
 VendorCode.defaultProps = {
   className: '',

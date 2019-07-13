@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { XsMd, Lg } from '../../common/Responsive';
-import ColorSelector from '../Selectors/ColorSelector/';
-import SizeSelector from '../Selectors/SizeSelector/';
+import ColorSelector from '../Selectors/ColorSelector';
+import SizeSelector from '../Selectors/SizeSelector';
 import PrimaryButton from '../../common/Buttons/PrimaryButton';
 import FindButton from './FindButton';
 import SizeHelpButton from './SizeHelpButton';
@@ -18,8 +18,8 @@ const Actions = styled.div`
   }
 `;
 
-export default () =>
-  (<Actions>
+export default () => (
+  <Actions>
     <div className="box">
       <div className="row">
         <div className="col-xs-12 col-lg-6">
@@ -50,4 +50,5 @@ export default () =>
         </XsMd>
       </div>
     </div>
-  </Actions>);
+  </Actions>
+);

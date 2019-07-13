@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ColorButton from './ColorButton';
-import CurrentSelectionName from './../CurrentSelectionName';
+import CurrentSelectionName from '../CurrentSelectionName';
 
 const ColorPalette = styled.div`
   display: flex;
@@ -35,18 +35,20 @@ class ColorSelector extends Component {
   setSelectedColorIndex = selectedColorIndex => this.setState({ selectedColorIndex });
 
   render() {
+    const { selectedColorIndex } = this.state;
+
     return (
       <ColorSelectorWrapper>
         <CurrentSelectionName
           label="Colour"
-          value={colors[this.state.selectedColorIndex].colorName}
+          value={colors[selectedColorIndex].colorName}
         />
         <ColorPalette>
           {colors.map((color, index) => (
             <ColorButton
               colorName={color.colorName}
               colorHex={color.colorHex}
-              isActive={this.state.selectedColorIndex === index}
+              isActive={selectedColorIndex === index}
               key={color.colorName}
               onClick={() => this.setSelectedColorIndex(index)}
             />

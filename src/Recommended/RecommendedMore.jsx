@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
@@ -17,8 +18,8 @@ const Link = styled(RouterLink)`
   text-decoration: none;
 `;
 
-export default () =>
-  (<RecommendedMore>
+export default () => (
+  <RecommendedMore>
     <div className="container">
       <div className="row">
         <div className="col-xs">
@@ -29,4 +30,5 @@ export default () =>
         </div>
       </div>
     </div>
-  </RecommendedMore>);
+  </RecommendedMore>
+);

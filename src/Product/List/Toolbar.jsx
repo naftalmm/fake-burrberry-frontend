@@ -52,11 +52,16 @@ const filterButtons = [
     title: 'Category',
     content: (
       <Content>
-        Content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
+        Content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
         content content content content content content content
       </Content>
     ),
@@ -65,11 +70,16 @@ const filterButtons = [
     title: 'Colour',
     content: (
       <Content>
-        Content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
+        Content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
         content content content content content content content
       </Content>
     ),
@@ -78,11 +88,16 @@ const filterButtons = [
     title: 'Size',
     content: (
       <Content>
-        Content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
-        content content content content content content content<br />
+        Content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
+        content content content content content content content
+        <br />
         content content content content content content content
       </Content>
     ),
@@ -94,10 +109,18 @@ const sortButtons = [
     title: 'Sort by price',
     content: (
       <Content>
-        high or <br />
-        low <br />
-        it’s medium length of <br />
-        content <br />
+        high or
+        {' '}
+        <br />
+        low
+        {' '}
+        <br />
+        it’s medium length of
+        {' '}
+        <br />
+        content
+        {' '}
+        <br />
       </Content>
     ),
   },
@@ -111,10 +134,12 @@ class Toolbar extends Component {
   handleDropdownButtonToggle = (dropdownName, isToggledOn) => {
     const activeDropdown = isToggledOn ? dropdownName : undefined;
     this.setState({ activeDropdown });
-    this.props.handleDropdownButtonToggle(isToggledOn);
+    const { handleDropdownButtonToggle } = this.props;
+    handleDropdownButtonToggle(isToggledOn);
   };
 
   render() {
+    const { activeDropdown } = this.state;
     return (
       <ToolbarWrapper>
         <SelectButtonsWrapper>
@@ -123,10 +148,11 @@ class Toolbar extends Component {
               key={filterButton.title}
               title={filterButton.title}
               isActive={
-                !this.state.activeDropdown || this.state.activeDropdown === filterButton.title
+                !activeDropdown || activeDropdown === filterButton.title
               }
-              onToggle={isToggledOn =>
-                this.handleDropdownButtonToggle(filterButton.title, isToggledOn)}
+              onToggle={
+                isToggledOn => this.handleDropdownButtonToggle(filterButton.title, isToggledOn)
+              }
             >
               <LeftContentWrapper>{filterButton.content}</LeftContentWrapper>
             </DropdownButton>
@@ -138,10 +164,11 @@ class Toolbar extends Component {
               key={sortButton.title}
               title={sortButton.title}
               isActive={
-                !this.state.activeDropdown || this.state.activeDropdown === sortButton.title
+                !activeDropdown || activeDropdown === sortButton.title
               }
-              onToggle={isToggledOn =>
-                this.handleDropdownButtonToggle(sortButton.title, isToggledOn)}
+              onToggle={
+                isToggledOn => this.handleDropdownButtonToggle(sortButton.title, isToggledOn)
+              }
             >
               <RightContentWrapper>{sortButton.content}</RightContentWrapper>
             </DropdownButton>

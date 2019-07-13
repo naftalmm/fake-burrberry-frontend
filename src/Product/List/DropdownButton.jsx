@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import enhanceWithClickOutside from 'react-click-outside';
 import TextButton from '../../common/Buttons/TextButton';
-import arrow from './../../assets/arrow.svg';
+import arrow from '../../assets/arrow.svg';
 
 const ToolbarButton = styled(TextButton)`
   padding-top: 1.5rem;
@@ -45,30 +45,35 @@ class DropdownButton extends Component {
   };
 
   handleClick = () => {
+    const { onToggle } = this.props;
+    const { isOpened } = this.state;
     this.setState(
       prevState => ({
         isOpened: !prevState.isOpened,
       }),
-      () => this.props.onToggle(this.state.isOpened),
+      () => onToggle(isOpened),
     );
   };
 
   handleClickOutside() {
-    this.props.onToggle(false);
+    const { onToggle } = this.props;
+    onToggle(false);
     this.setState({ isOpened: false });
   }
 
   render() {
+    const { isActive, title, children } = this.props;
+    const { isOpened } = this.state;
     return (
       <ToolbarButtonWrapper>
         <ToolbarButton
-          isActive={this.props.isActive}
-          isOpened={this.state.isOpened}
+          isActive={isActive}
+          isOpened={isOpened}
           onClick={this.handleClick}
         >
-          {this.props.title}
+          {title}
         </ToolbarButton>
-        {this.state.isOpened && this.props.children}
+        {isOpened && children}
       </ToolbarButtonWrapper>
     );
   }

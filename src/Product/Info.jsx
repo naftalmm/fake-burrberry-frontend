@@ -31,13 +31,14 @@ const Price = styled(FormattedPrice)`
   color: #111;
 `;
 
-const Info = props =>
-  (<InfoWrapper>
-    <Price value={props.priceValue} currency={props.priceCurrency} />
+const Info = ({ priceValue, priceCurrency, vendorCode }) => (
+  <InfoWrapper>
+    <Price value={priceValue} currency={priceCurrency} />
     <XsMd>
-      <VendorCode value={props.vendorCode} />
+      <VendorCode value={vendorCode} />
     </XsMd>
-  </InfoWrapper>);
+  </InfoWrapper>
+);
 
 Info.propTypes = {
   priceValue: PropTypes.number.isRequired,

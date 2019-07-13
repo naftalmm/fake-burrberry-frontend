@@ -37,11 +37,14 @@ class ButtonSelect extends Component {
   setSelectedIndex = selectedIndex => this.setState({ selectedIndex });
 
   render() {
+    const { options } = this.props;
+    const { selectedIndex } = this.state;
     return (
       <SelectorWrapper>
-        <Button>{this.props.options[this.state.selectedIndex]}</Button>
+        <Button>{options[selectedIndex]}</Button>
         <Select onChange={event => this.setSelectedIndex(event.target.selectedIndex)}>
-          {this.props.options.map(option => <option key={option}>{option}</option>)}.
+          {options.map(option => <option key={option}>{option}</option>)}
+          .
         </Select>
       </SelectorWrapper>
     );

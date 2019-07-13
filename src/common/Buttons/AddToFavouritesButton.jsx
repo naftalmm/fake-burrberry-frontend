@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Heart from './../../assets/Heart';
+import Heart from '../../assets/Heart';
 
 class AddToFavouritesButton extends Component {
   static defaultProps = {
@@ -14,15 +14,16 @@ class AddToFavouritesButton extends Component {
 
   state = { isToggleOn: false };
 
-  toggle = () =>
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn,
-    }));
+  toggle = () => this.setState(prevState => ({
+    isToggleOn: !prevState.isToggleOn,
+  }));
 
   render() {
+    const { className } = this.props;
+    const { isToggleOn } = this.state;
     return (
-      <button className={this.props.className} onClick={this.toggle}>
-        <Heart fill={this.state.isToggleOn ? '#171717' : 'none'} />
+      <button className={className} onClick={this.toggle} type="submit">
+        <Heart fill={isToggleOn ? '#171717' : 'none'} />
       </button>
     );
   }

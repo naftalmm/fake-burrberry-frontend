@@ -8,8 +8,8 @@ const PhotosCarousel = styled.div`
 `;
 
 const { PUBLIC_URL } = process.env;
-export default () =>
-  (<PhotosCarousel>
+export default () => (
+  <PhotosCarousel>
     <Photo
       srcSet={`${PUBLIC_URL}/img/bitmap_4@2x.jpg 600w, ${PUBLIC_URL}/img/bitmap_4@3x.jpg 900w`}
       src={`${PUBLIC_URL}/img/bitmap_4.jpg`}
@@ -30,4 +30,5 @@ export default () =>
       src={`${PUBLIC_URL}/img/bitmap_3.jpg`}
       alt="Product photo"
     />
-  </PhotosCarousel>);
+  </PhotosCarousel>
+);

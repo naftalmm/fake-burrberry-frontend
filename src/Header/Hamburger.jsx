@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import hamburger from './../assets/hamburger.svg';
+import hamburger from '../assets/hamburger.svg';
 
-const Button = props => (
-  <button type="button" className={props.className} onClick={props.onClick}>
+const Button = ({ className, onClick }) => (
+  <button type="button" className={className} onClick={onClick}>
     <img src={hamburger} alt="Open menu" />
   </button>
 );

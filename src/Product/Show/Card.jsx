@@ -22,20 +22,22 @@ const ProductWrapper = styled.div`
 `;
 
 const { PUBLIC_URL } = process.env;
-const Card = props =>
-  (<div>
+const Card = ({
+  title, backgroundColor, priceValue, priceCurrency, vendorCode,
+}) => (
+  <div>
     <Helmet>
       <title>
-        {`${props.title} | Men - Burberry`}
+        {`${title} | Men - Burberry`}
       </title>
     </Helmet>
-    <ProductWrapper backgroundColor={props.backgroundColor}>
+    <ProductWrapper backgroundColor={backgroundColor}>
       <main className="container">
         <XsMd>
           <div className="row">
             <div className="col-xs-12">
               <Title>
-                {props.title}
+                {title}
               </Title>
             </div>
           </div>
@@ -56,13 +58,13 @@ const Card = props =>
           <div className="col-xs-12 col-md-5 col-lg-6">
             <Lg>
               <Title>
-                {props.title}
+                {title}
               </Title>
             </Lg>
             <Info
-              priceValue={props.priceValue}
-              priceCurrency={props.priceCurrency}
-              vendorCode={props.vendorCode}
+              priceValue={priceValue}
+              priceCurrency={priceCurrency}
+              vendorCode={vendorCode}
             />
             <Actions />
             <Lg>
@@ -75,11 +77,8 @@ const Card = props =>
         </div>
       </main>
     </ProductWrapper>
-  </div>);
-
-Card.defaultProps = {
-  className: '',
-};
+  </div>
+);
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,

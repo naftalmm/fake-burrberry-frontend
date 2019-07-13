@@ -30,8 +30,8 @@ const ButtonsWrapper = styled.div`
 `;
 
 
-export default () =>
-  (<Footer>
+export default () => (
+  <Footer>
     <MdLg>
       <Info />
     </MdLg>
@@ -46,4 +46,5 @@ export default () =>
       </div>
     </div>
     <Help />
-  </Footer>);
+  </Footer>
+);

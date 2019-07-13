@@ -2,18 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedNumber } from 'react-intl';
 
-const FormattedPrice = props =>
-  (<span className={props.className}>
+const FormattedPrice = ({ className, currency, value }) => (
+  <span className={className}>
     <FormattedNumber
       // eslint-disable-next-line
       style="currency"
-      currency={props.currency}
+      currency={currency}
       currencyDisplay="symbol"
-      value={props.value}
+      value={value}
       minimumFractionDigits={0}
       maximumFractionDigits={0}
     />
-  </span>);
+  </span>
+);
 
 FormattedPrice.defaultProps = {
   className: '',

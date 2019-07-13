@@ -19,8 +19,8 @@ const Image = styled.div`
 `;
 
 const { PUBLIC_URL } = process.env;
-export default () =>
-  (<div className="container">
+export default () => (
+  <div className="container">
     <Gallery className="row">
       <Image className="col-lg-4">
         <Photo
@@ -44,4 +44,5 @@ export default () =>
         />
       </Image>
     </Gallery>
-  </div>);
+  </div>
+);

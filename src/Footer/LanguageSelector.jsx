@@ -45,14 +45,20 @@ class LanguageSelector extends Component {
   setSelectedLanguageIndex = selectedLanguageIndex => this.setState({ selectedLanguageIndex });
 
   render() {
+    const { selectedLanguageIndex } = this.state;
     return (
       <SelectorWrapper>
         <SelectButton>
           Language:&nbsp;
-          <SelectedLocale>{languages[this.state.selectedLanguageIndex]}</SelectedLocale>
+          <SelectedLocale>{languages[selectedLanguageIndex]}</SelectedLocale>
         </SelectButton>
         <Select onChange={event => this.setSelectedLanguageIndex(event.target.selectedIndex)}>
-          {languages.map(language => <option key={language}>Language: {language}</option>)}
+          {languages.map(language => (
+            <option key={language}>
+              Language:
+              {language}
+            </option>
+          ))}
         </Select>
       </SelectorWrapper>
     );

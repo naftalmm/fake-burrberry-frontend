@@ -4,15 +4,15 @@ import SectionHeader from '../../common/SectionHeader';
 import Card from './Card';
 import Description from '../Description';
 import Photo from './Photo';
-import Delivery from '../../Delivery/';
-import Accordion from '../Accordion/';
-import Recommended from '../../Recommended/';
+import Delivery from '../../Delivery';
+import Accordion from '../Accordion';
+import Recommended from '../../Recommended';
 import RecommendedMore from '../../Recommended/RecommendedMore';
 import Gallery from './Gallery';
 
 const { PUBLIC_URL } = process.env;
-export default () =>
-  (<div>
+export default () => (
+  <div>
     <Card
       backgroundColor="#d4bdad"
       title="Long Cotton Gabardine Car Coat"
@@ -56,4 +56,5 @@ export default () =>
     <Xs>
       <RecommendedMore />
     </Xs>
-  </div>);
+  </div>
+);

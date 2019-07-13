@@ -45,14 +45,20 @@ class ShippingLocationSelector extends Component {
   setSelectedLocationIndex = selectedLocationIndex => this.setState({ selectedLocationIndex });
 
   render() {
+    const { selectedLocationIndex } = this.state;
     return (
       <SelectorWrapper>
         <SelectButton>
           Shipping country:&nbsp;
-          <SelectedValue>{locations[this.state.selectedLocationIndex]}</SelectedValue>
+          <SelectedValue>{locations[selectedLocationIndex]}</SelectedValue>
         </SelectButton>
         <Select onChange={event => this.setSelectedLocationIndex(event.target.selectedIndex)}>
-          {locations.map(location => <option key={location}>Shipping country: {location}</option>)}
+          {locations.map(location => (
+            <option key={location}>
+              Shipping country:
+              {location}
+            </option>
+          ))}
         </Select>
       </SelectorWrapper>
     );

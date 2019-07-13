@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Logo from './Logo';
-import { Xs, MdLg } from './../common/Responsive';
+import { Xs, MdLg } from '../common/Responsive';
 import Hamburger from './Hamburger';
 import LocationSelector from './ShopLocationSelector';
-import TabGroup from './../common/TabGroup/';
+import TabGroup from '../common/TabGroup';
 
-const Header = props => (
+const Header = ({ isSideNavOpened, handleSideNavToggle }) => (
   <div className="container">
     <div className="row start-xs">
       <div className="col-xs-1 col-md-4">
         <Xs>
-          <Hamburger isSideNavOpened={props.isSideNavOpened} onClick={props.handleSideNavToggle} />
+          <Hamburger isSideNavOpened={isSideNavOpened} onClick={handleSideNavToggle} />
         </Xs>
         <MdLg>
           <LocationSelector />

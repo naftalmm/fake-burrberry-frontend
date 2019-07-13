@@ -3,12 +3,14 @@ import styled, { css } from 'styled-components';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
-import { Switch, Redirect, BrowserRouter as Router, Route } from 'react-router-dom';
-import SideNav from './SideNav/';
-import Header from './Header/';
-import Footer from './Footer/';
-import List from './Product/List/';
-import Show from './Product/Show/';
+import {
+  Switch, Redirect, BrowserRouter as Router, Route,
+} from 'react-router-dom';
+import SideNav from './SideNav';
+import Header from './Header';
+import Footer from './Footer';
+import List from './Product/List';
+import Show from './Product/Show';
 import './App.css';
 
 addLocaleData([...en, ...ru]);
@@ -18,9 +20,8 @@ const Page = styled.div`
   height: 100%;
   width: 100%;
   transition-duration: 0.25s;
-  ${props =>
-    props.isSideNavOpened &&
-    css`
+  ${props => props.isSideNavOpened
+    && css`
       transform: translate3d(274px, 0, 0);
       @media screen and (min-width: 48rem) {
         transform: none;
@@ -32,23 +33,23 @@ const Page = styled.div`
 class App extends Component {
   state = { isSideNavOpened: false };
 
-  handleSideNavToggle = () =>
-    this.setState(prevState => ({
-      isSideNavOpened: !prevState.isSideNavOpened,
-    }));
+  handleSideNavToggle = () => this.setState(prevState => ({
+    isSideNavOpened: !prevState.isSideNavOpened,
+  }));
 
   render() {
+    const { isSideNavOpened } = this.state;
     return (
       <IntlProvider locale="ru">
         <Router>
           <div>
             <SideNav
-              isSideNavOpened={this.state.isSideNavOpened}
+              isSideNavOpened={isSideNavOpened}
               onToggle={this.handleSideNavToggle}
             />
-            <Page isSideNavOpened={this.state.isSideNavOpened}>
+            <Page isSideNavOpened={isSideNavOpened}>
               <Header
-                isSideNavOpened={this.state.isSideNavOpened}
+                isSideNavOpened={isSideNavOpened}
                 handleSideNavToggle={this.handleSideNavToggle}
               />
               <Switch>

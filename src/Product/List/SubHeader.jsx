@@ -15,23 +15,25 @@ const Title = styled.h1`
   color: #171717;
 `;
 
-const SubHeader = props => (
-  <section className={props.className}>
+const SubHeader = ({
+  className, title, text, handleDropdownButtonToggle,
+}) => (
+  <section className={className}>
     <div className="container">
       <div className="row">
         <div className="col-xs-11 col-md-9 col-lg-7">
           <Helmet>
             <title>
-              {props.title}
+              {title}
             </title>
           </Helmet>
           <Title>
-            {props.title}
+            {title}
           </Title>
-          {props.text}
+          {text}
         </div>
       </div>
-      <Toolbar handleDropdownButtonToggle={props.handleDropdownButtonToggle} />
+      <Toolbar handleDropdownButtonToggle={handleDropdownButtonToggle} />
     </div>
   </section>
 );

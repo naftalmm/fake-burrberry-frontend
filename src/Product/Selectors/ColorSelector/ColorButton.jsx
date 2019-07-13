@@ -13,14 +13,19 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
 `;
 
-const Button = props => (
+const Button = ({
+  isActive, colorHex, onClick, colorName,
+}) => (
   <ButtonWrapper
     type="button"
-    isActive={props.isActive}
-    colorHex={props.colorHex}
-    onClick={props.onClick}
+    isActive={isActive}
+    colorHex={colorHex}
+    onClick={onClick}
   >
-    <span hidden>Change colour to ${props.colorName}</span>
+    <span hidden>
+      Change colour to $
+      {colorName}
+    </span>
   </ButtonWrapper>
 );
 

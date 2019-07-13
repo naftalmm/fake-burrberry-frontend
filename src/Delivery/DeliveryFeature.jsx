@@ -26,15 +26,16 @@ const Description = styled.p`
 
 const DeliveryFeatureWrapper = styled.div`margin-bottom: 1.5rem;`;
 
-const DeliveryFeature = props =>
-  (<DeliveryFeatureWrapper>
+const DeliveryFeature = ({ name, description }) => (
+  <DeliveryFeatureWrapper>
     <Name>
-      {props.name}
+      {name}
     </Name>
     <Description>
-      {props.description}
+      {description}
     </Description>
-  </DeliveryFeatureWrapper>);
+  </DeliveryFeatureWrapper>
+);
 
 DeliveryFeature.propTypes = {
   name: PropTypes.string.isRequired,

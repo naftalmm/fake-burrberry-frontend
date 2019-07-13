@@ -12,11 +12,12 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
-const Photo = props =>
-  (<picture>
-    <source media="(min-width: 48rem)" srcSet={props.srcSet} />
-    <Image src={props.src} alt={props.alt} />
-  </picture>);
+const Photo = ({ srcSet, src, alt }) => (
+  <picture>
+    <source media="(min-width: 48rem)" srcSet={srcSet} />
+    <Image src={src} alt={alt} />
+  </picture>
+);
 
 Photo.propTypes = {
   srcSet: PropTypes.string.isRequired,

@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
-import { Lg } from './../common/Responsive';
+import { Lg } from '../common/Responsive';
 
 const Header = styled.h4`
   margin-top: 0;
@@ -49,8 +50,8 @@ const FindStoreLink = styled(RouterLink)`
   border-bottom: solid 1px #171717;
 `;
 
-export default () =>
-  (<nav className="container">
+export default () => (
+  <nav className="container">
     <div className="row">
       <div className="col-md-3">
         <Header>CUSTOMER SERVICE</Header>
@@ -86,4 +87,5 @@ export default () =>
         </div>
       </Lg>
     </div>
-  </nav>);
+  </nav>
+);

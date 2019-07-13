@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MdLg } from './../common/Responsive';
-import SectionHeader from './../common/SectionHeader';
+import { MdLg } from '../common/Responsive';
+import SectionHeader from '../common/SectionHeader';
 import DeliveryFeature from './DeliveryFeature';
 
 const Image = styled.img`
@@ -14,8 +14,8 @@ const Image = styled.img`
 `;
 
 const { PUBLIC_URL } = process.env;
-export default () =>
-  (<div className="box">
+export default () => (
+  <div className="box">
     <div className="row middle-lg">
       <MdLg>
         <div className="col-md-7">
@@ -46,4 +46,5 @@ export default () =>
         />
       </div>
     </div>
-  </div>);
+  </div>
+);

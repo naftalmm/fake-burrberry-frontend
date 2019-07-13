@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import SecondaryButton from './../../common/Buttons/SecondaryButton';
+import SecondaryButton from '../../common/Buttons/SecondaryButton';
 
 const ShowMore = styled.div`
   display: inline-block;
@@ -30,17 +30,28 @@ const ViewMoreButton = styled(SecondaryButton)`
   padding: 1rem 2rem;
 `;
 
-const ShowMoreWrapper = props =>
-  (<div className={props.className}>
+const ShowMoreWrapper = ({ className, currentlyShownCards, totalCards }) => (
+  <div className={className}>
     <ShowMore>
       <CurrentlyShown>
-        Showing {props.currentlyShownCards} of {props.totalCards}
+        Showing
+        {' '}
+        {currentlyShownCards}
+        {' '}
+        of
+        {' '}
+        {totalCards}
       </CurrentlyShown>
       <ViewMoreButton>
-        View {props.totalCards - props.currentlyShownCards} more
+        View
+        {' '}
+        {totalCards - currentlyShownCards}
+        {' '}
+        more
       </ViewMoreButton>
     </ShowMore>
-  </div>);
+  </div>
+);
 
 ShowMoreWrapper.defaultProps = {
   className: '',

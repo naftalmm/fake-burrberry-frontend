@@ -6,7 +6,7 @@ import SubHeader from './SubHeader';
 import ShowMore from './ShowMore';
 import Category from '../Category';
 import TextButton from '../../common/Buttons/TextButton';
-import Text from './../List/Text';
+import Text from './Text';
 
 const Button = styled(TextButton)`
   padding: 0.5rem 0.25 rem;
@@ -34,7 +34,8 @@ const MenSectionText = (
   <div>
     <Text>
       Explore our menswear collection for the season. Sculptural knitwear,&nbsp;
-      <Link to="/men/sweatshirts">sweatshirts</Link>, artist overalls and oversized cabans feature
+      <Link to="/men/sweatshirts">sweatshirts</Link>
+, artist overalls and oversized cabans feature
       alongside our signature trench coat in both heritage and seasonal…
       <Button type="button">More</Button>
     </Text>
@@ -230,9 +231,8 @@ const sections = {
 const Overlay = styled.div`
   position: relative;
 
-  ${props =>
-    props.isToggleOn &&
-    css`
+  ${props => props.isToggleOn
+    && css`
       &:after {
         position: absolute;
         top: 0;
@@ -255,7 +255,9 @@ class List extends Component {
   handleOverlayToggle = isOverlayToggleOn => this.setState({ isOverlayToggleOn });
 
   render() {
-    const sectionName = this.props.match.params.section;
+    const { isOverlayToggleOn } = this.state;
+    const { match } = this.props;
+    const sectionName = match.params.section;
     // Stub for sections which are not done yet
     const section = sections[sectionName] == null ? sections.men : sections[sectionName];
     return (
@@ -265,7 +267,7 @@ class List extends Component {
           text={section.text}
           handleDropdownButtonToggle={this.handleOverlayToggle}
         />
-        <Overlay isToggleOn={this.state.isOverlayToggleOn}>
+        <Overlay isToggleOn={isOverlayToggleOn}>
           <div className="container">
             {section.categories[0]}
             <Delimiter />

@@ -22,11 +22,12 @@ const Header = styled.h2`
   }
 `;
 
-const Category = (props) => {
-  const { section } = props;
-  const category = props.title.toLowerCase().split(' ').join('-');
-  const cards = props.products.map(product =>
-    (<div className="col-xs-6 col-md-3" key={product.id}>
+const Category = ({
+  className, section, title, products,
+}) => {
+  const category = title.toLowerCase().split(' ').join('-');
+  const cards = products.map(product => (
+    <div className="col-xs-6 col-md-3" key={product.id}>
       <Card
         id={product.id}
         to={`/${section}/${category}/${product.id}`}
@@ -38,16 +39,16 @@ const Category = (props) => {
         priceValue={product.priceValue}
         priceCurrency={product.priceCurrency}
       />
-    </div>),
-  );
+    </div>
+  ));
 
   return (
-    <section className={props.className}>
+    <section className={className}>
       <div className="box">
         <div className="row">
           <div className="col-xs-12">
             <Header>
-              {props.title}
+              {title}
             </Header>
           </div>
         </div>

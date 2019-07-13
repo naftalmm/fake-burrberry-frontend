@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -59,12 +60,13 @@ const Link = styled(RouterLink)`
   border-bottom: solid 1px #171717
 `;
 
-const ProductNameLink = props =>
-  (<RouterLink to={props.to}>
+const ProductNameLink = ({ to, name }) => (
+  <RouterLink to={to}>
     <ProductName>
-      {props.name}
+      {name}
     </ProductName>
-  </RouterLink>);
+  </RouterLink>
+);
 
 ProductNameLink.propTypes = {
   to: PropTypes.string.isRequired,
@@ -87,44 +89,50 @@ const NColorsAvailable = styled.p`
   color: #171717;
 `;
 
-const Card = (props) => {
-  const PromoLabelLine = () =>
-    props.promoLabel != null &&
+const Card = ({
+  className, promoLabel, isInFavourites, to, name, colors, src, alt, id, priceValue, priceCurrency,
+}) => {
+  const PromoLabelLine = () => promoLabel != null
+    && (
     <AddToFavouritesWrapper>
       <PromoLabel>
-        {props.promoLabel}
+        {promoLabel}
       </PromoLabel>
-      <Heart filled={props.isInFavourites} />
-    </AddToFavouritesWrapper>;
+      <Heart filled={isInFavourites} />
+    </AddToFavouritesWrapper>
+    );
 
-  const ProductNameWrapper = () =>
-    (props.promoLabel != null
-      ? <ProductNameLink to={props.to} name={props.name} />
-      : <AddToFavouritesWrapper>
-        <ProductNameLink to={props.to} name={props.name} />
-        <Heart filled={props.isInFavourites} />
-      </AddToFavouritesWrapper>);
+  const ProductNameWrapper = () => (promoLabel != null
+    ? <ProductNameLink to={to} name={name} />
+    : (
+      <AddToFavouritesWrapper>
+        <ProductNameLink to={to} name={name} />
+        <Heart filled={isInFavourites} />
+      </AddToFavouritesWrapper>
+    ));
 
-  const NColorsAvailableWrapper = () =>
-    props.colors > 0 &&
+  const NColorsAvailableWrapper = () => colors > 0
+    && (
     <NColorsAvailable>
       Available in&nbsp;
       <Link to="">
-        {props.colors}&nbsp;
-        <FormattedPlural value={props.colors} one="colour" other="colours" />
+        {colors}
+        &nbsp;
+        <FormattedPlural value={colors} one="colour" other="colours" />
       </Link>
-    </NColorsAvailable>;
+    </NColorsAvailable>
+    );
 
   return (
-    <div className={props.className}>
-      <RouterLink to={props.to}>
-        <Image src={`${props.src}?$BBY_V2_ML_3X4$&wid=600&hei=800`} alt={props.alt} />
+    <div className={className}>
+      <RouterLink to={to}>
+        <Image src={`${src}?$BBY_V2_ML_3X4$&wid=600&hei=800`} alt={alt} />
       </RouterLink>
       <PromoLabelLine />
-      <ProductNameWrapper id={props.id} name={props.name} />
-      <NColorsAvailableWrapper colors={props.colors} />
-      <RouterLink to={props.to}>
-        <Price value={props.priceValue} currency={props.priceCurrency} />
+      <ProductNameWrapper id={id} name={name} />
+      <NColorsAvailableWrapper colors={colors} />
+      <RouterLink to={to}>
+        <Price value={priceValue} currency={priceCurrency} />
       </RouterLink>
     </div>
   );

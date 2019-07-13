@@ -35,11 +35,11 @@ const Header = styled.h2`
   color: #171717;
 `;
 
-const AccordionPaneHeader = props => (
-  <AccordionPaneHeaderWrapper isOpened={props.isOpened}>
+const AccordionPaneHeader = ({ isOpened, name }) => (
+  <AccordionPaneHeaderWrapper isOpened={isOpened}>
     <ButtonWrapper type="button">
       <Header>
-        {props.name}
+        {name}
       </Header>
     </ButtonWrapper>
   </AccordionPaneHeaderWrapper>

@@ -25,5 +25,5 @@ export default styled(Button)`
   background: none;
   border: none;
   cursor: pointer;
-  ${props => props.isSideNavOpened && css`pointer-events: none;`};
+  ${(props) => props.isSideNavOpened && css`pointer-events: none;`};
 `;

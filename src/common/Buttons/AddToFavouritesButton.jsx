@@ -4,17 +4,12 @@ import PropTypes from 'prop-types';
 import Heart from '../../assets/Heart';
 
 class AddToFavouritesButton extends Component {
-  static defaultProps = {
-    className: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: false };
+  }
 
-  static propTypes = {
-    className: PropTypes.string,
-  };
-
-  state = { isToggleOn: false };
-
-  toggle = () => this.setState(prevState => ({
+  toggle = () => this.setState((prevState) => ({
     isToggleOn: !prevState.isToggleOn,
   }));
 
@@ -28,6 +23,14 @@ class AddToFavouritesButton extends Component {
     );
   }
 }
+
+AddToFavouritesButton.defaultProps = {
+  className: '',
+};
+
+AddToFavouritesButton.propTypes = {
+  className: PropTypes.string,
+};
 
 export default styled(AddToFavouritesButton)`
   margin-left: 1rem;

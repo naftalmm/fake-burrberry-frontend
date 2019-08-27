@@ -40,9 +40,12 @@ const SelectedLocale = styled.span`
 const languages = ['English', 'Russian'];
 
 class LanguageSelector extends Component {
-  state = { selectedLanguageIndex: 0 };
+  constructor(props) {
+    super(props);
+    this.state = { selectedLanguageIndex: 0 };
+  }
 
-  setSelectedLanguageIndex = selectedLanguageIndex => this.setState({ selectedLanguageIndex });
+  setSelectedLanguageIndex = (selectedLanguageIndex) => this.setState({ selectedLanguageIndex });
 
   render() {
     const { selectedLanguageIndex } = this.state;
@@ -52,8 +55,8 @@ class LanguageSelector extends Component {
           Language:&nbsp;
           <SelectedLocale>{languages[selectedLanguageIndex]}</SelectedLocale>
         </SelectButton>
-        <Select onChange={event => this.setSelectedLanguageIndex(event.target.selectedIndex)}>
-          {languages.map(language => (
+        <Select onChange={(event) => this.setSelectedLanguageIndex(event.target.selectedIndex)}>
+          {languages.map((language) => (
             <option key={language}>
               Language:
               {language}

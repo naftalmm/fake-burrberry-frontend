@@ -30,9 +30,12 @@ const colors = [
 ];
 
 class ColorSelector extends Component {
-  state = { selectedColorIndex: 0 };
+  constructor(props) {
+    super(props);
+    this.state = { selectedColorIndex: 0 };
+  }
 
-  setSelectedColorIndex = selectedColorIndex => this.setState({ selectedColorIndex });
+  setSelectedColorIndex = (selectedColorIndex) => this.setState({ selectedColorIndex });
 
   render() {
     const { selectedColorIndex } = this.state;

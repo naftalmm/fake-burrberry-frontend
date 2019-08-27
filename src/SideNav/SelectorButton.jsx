@@ -28,13 +28,12 @@ const Button = styled(SecondaryButton)`
 `;
 
 class ButtonSelect extends Component {
-  static propTypes = {
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  };
+  constructor(props) {
+    super(props);
+    this.state = { selectedIndex: 0 };
+  }
 
-  state = { selectedIndex: 0 };
-
-  setSelectedIndex = selectedIndex => this.setState({ selectedIndex });
+  setSelectedIndex = (selectedIndex) => this.setState({ selectedIndex });
 
   render() {
     const { options } = this.props;
@@ -42,13 +41,17 @@ class ButtonSelect extends Component {
     return (
       <SelectorWrapper>
         <Button>{options[selectedIndex]}</Button>
-        <Select onChange={event => this.setSelectedIndex(event.target.selectedIndex)}>
-          {options.map(option => <option key={option}>{option}</option>)}
+        <Select onChange={(event) => this.setSelectedIndex(event.target.selectedIndex)}>
+          {options.map((option) => <option key={option}>{option}</option>)}
           .
         </Select>
       </SelectorWrapper>
     );
   }
 }
+
+ButtonSelect.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default ButtonSelect;

@@ -8,7 +8,7 @@ const AccordionPaneWrapper = styled.div`
   border-top: solid 1px #c6c6c6;
 `;
 
-const AccordionPaneEntry = styled.div`${props => !props.isOpened && css`display: none`};`;
+const AccordionPaneEntry = styled.div`${(props) => !props.isOpened && css`display: none`};`;
 
 const AccordionPane = ({
   className, isOpened, headerName, content,

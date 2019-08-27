@@ -127,9 +127,10 @@ const sortButtons = [
 ];
 
 class Toolbar extends Component {
-  state = {
-    activeDropdown: undefined,
-  };
+  constructor(props) {
+    super(props);
+    this.state = { activeDropdown: undefined };
+  }
 
   handleDropdownButtonToggle = (dropdownName, isToggledOn) => {
     const activeDropdown = isToggledOn ? dropdownName : undefined;
@@ -143,7 +144,7 @@ class Toolbar extends Component {
     return (
       <ToolbarWrapper>
         <SelectButtonsWrapper>
-          {filterButtons.map(filterButton => (
+          {filterButtons.map((filterButton) => (
             <DropdownButton
               key={filterButton.title}
               title={filterButton.title}
@@ -151,7 +152,7 @@ class Toolbar extends Component {
                 !activeDropdown || activeDropdown === filterButton.title
               }
               onToggle={
-                isToggledOn => this.handleDropdownButtonToggle(filterButton.title, isToggledOn)
+                (isToggledOn) => this.handleDropdownButtonToggle(filterButton.title, isToggledOn)
               }
             >
               <LeftContentWrapper>{filterButton.content}</LeftContentWrapper>
@@ -159,7 +160,7 @@ class Toolbar extends Component {
           ))}
         </SelectButtonsWrapper>
         <div>
-          {sortButtons.map(sortButton => (
+          {sortButtons.map((sortButton) => (
             <DropdownButton
               key={sortButton.title}
               title={sortButton.title}
@@ -167,7 +168,7 @@ class Toolbar extends Component {
                 !activeDropdown || activeDropdown === sortButton.title
               }
               onToggle={
-                isToggledOn => this.handleDropdownButtonToggle(sortButton.title, isToggledOn)
+                (isToggledOn) => this.handleDropdownButtonToggle(sortButton.title, isToggledOn)
               }
             >
               <RightContentWrapper>{sortButton.content}</RightContentWrapper>

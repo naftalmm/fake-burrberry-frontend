@@ -34,7 +34,7 @@ const Header = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   height: 169px;
-  background: url(${props => props.image}) no-repeat;
+  background: url(${(props) => props.image}) no-repeat;
   background-size: cover;
 `;
 
@@ -76,7 +76,7 @@ const SubNavigation = ({ onClose, navigation }) => (
       <Title>{navigation.title}</Title>
     </Header>
     <Links>
-      {navigation.links.map(link => (
+      {navigation.links.map((link) => (
         <Link to={link.url} key={link.url}>
           {link.title}
         </Link>

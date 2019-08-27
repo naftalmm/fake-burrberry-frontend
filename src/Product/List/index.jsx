@@ -231,7 +231,7 @@ const sections = {
 const Overlay = styled.div`
   position: relative;
 
-  ${props => props.isToggleOn
+  ${(props) => props.isToggleOn
     && css`
       &:after {
         position: absolute;
@@ -246,13 +246,12 @@ const Overlay = styled.div`
 `;
 
 class List extends Component {
-  static propTypes = {
-    match: PropTypes.objectOf(PropTypes.any).isRequired,
-  };
+  constructor(props) {
+    super(props);
+    this.state = { isOverlayToggleOn: false };
+  }
 
-  state = { isOverlayToggleOn: false };
-
-  handleOverlayToggle = isOverlayToggleOn => this.setState({ isOverlayToggleOn });
+  handleOverlayToggle = (isOverlayToggleOn) => this.setState({ isOverlayToggleOn });
 
   render() {
     const { isOverlayToggleOn } = this.state;
@@ -279,5 +278,9 @@ class List extends Component {
     );
   }
 }
+
+List.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 export default List;

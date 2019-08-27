@@ -8,8 +8,8 @@ const ButtonWrapper = styled.button`
   margin-right: 1rem;
 
   border-radius: 50%;
-  border: solid 1px ${props => (props.isActive ? '#232122' : 'transparent')};
-  background-color: ${props => props.colorHex};
+  border: solid 1px ${(props) => (props.isActive ? '#232122' : 'transparent')};
+  background-color: ${(props) => props.colorHex};
   cursor: pointer;
 `;
 

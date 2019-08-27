@@ -40,9 +40,12 @@ const SelectedValue = styled.span`
 const locations = ['United Kingdom', 'Russian Federation'];
 
 class ShippingLocationSelector extends Component {
-  state = { selectedLocationIndex: 0 };
+  constructor(props) {
+    super(props);
+    this.state = { selectedLocationIndex: 0 };
+  }
 
-  setSelectedLocationIndex = selectedLocationIndex => this.setState({ selectedLocationIndex });
+  setSelectedLocationIndex = (selectedLocationIndex) => this.setState({ selectedLocationIndex });
 
   render() {
     const { selectedLocationIndex } = this.state;
@@ -52,8 +55,8 @@ class ShippingLocationSelector extends Component {
           Shipping country:&nbsp;
           <SelectedValue>{locations[selectedLocationIndex]}</SelectedValue>
         </SelectButton>
-        <Select onChange={event => this.setSelectedLocationIndex(event.target.selectedIndex)}>
-          {locations.map(location => (
+        <Select onChange={(event) => this.setSelectedLocationIndex(event.target.selectedIndex)}>
+          {locations.map((location) => (
             <option key={location}>
               Shipping country:
               {location}

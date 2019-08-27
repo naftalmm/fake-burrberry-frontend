@@ -11,7 +11,7 @@ const AccordionPaneHeaderWrapper = styled.div`
 
   &:after {
     margin-right: 1rem;
-    transform: ${props => (props.isOpened ? 'rotate(180deg)' : 'none')};
+    transform: ${(props) => (props.isOpened ? 'rotate(180deg)' : 'none')};
     content: url(${triangle});
   }
 `;

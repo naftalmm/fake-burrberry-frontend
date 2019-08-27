@@ -18,7 +18,7 @@ const SideNavWrapper = styled.nav`
 `;
 
 const MainNavigation = styled.div`transition-duration: 0.25s;
-${props => props.isShiftedLeft
+${(props) => props.isShiftedLeft
     && css`
       transform: translate3d(-274px, 0, 0);
     `};
@@ -137,17 +137,13 @@ const subNavigation = [
 const SelectorButtons = styled.div`margin-top: 2.25rem`;
 
 class SideNav extends Component {
-  static propTypes = {
-    isSideNavOpened: PropTypes.bool.isRequired,
-    onToggle: PropTypes.func.isRequired,
-  };
-
-  state = {
-    subNavActiveSectionIndex: undefined,
-  };
+  constructor(props) {
+    super(props);
+    this.state = { subNavActiveSectionIndex: undefined };
+  }
 
   setSubNavActiveSectionIndex =
-    subNavActiveSectionIndex => this.setState({ subNavActiveSectionIndex });
+    (subNavActiveSectionIndex) => this.setState({ subNavActiveSectionIndex });
 
   handleClickOutside() {
     const { isSideNavOpened, onToggle } = this.props;
@@ -213,5 +209,10 @@ class SideNav extends Component {
     );
   }
 }
+
+SideNav.propTypes = {
+  isSideNavOpened: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
+};
 
 export default enhanceWithClickOutside(SideNav);

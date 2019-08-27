@@ -25,9 +25,12 @@ const Wrapper = styled.div`
 const sizes = ['S', 'M', 'L', 'XL'];
 
 class SizeSelector extends Component {
-  state = { selectedSizeIndex: 0 };
+  constructor(props) {
+    super(props);
+    this.state = { selectedSizeIndex: 0 };
+  }
 
-  setSelectedSizeIndex = selectedSizeIndex => this.setState({ selectedSizeIndex });
+  setSelectedSizeIndex = (selectedSizeIndex) => this.setState({ selectedSizeIndex });
 
   render() {
     const { selectedSizeIndex } = this.state;

@@ -40,9 +40,12 @@ const Select = styled.select`
 const locations = ['United Kingdom (£)', 'Russian Federation (₽)'];
 
 class ShopLocationSelector extends Component {
-  state = { selectedLocationIndex: 0 };
+  constructor(props) {
+    super(props);
+    this.state = { selectedLocationIndex: 0 };
+  }
 
-  setSelectedLocationIndex = selectedLocationIndex => this.setState({ selectedLocationIndex });
+  setSelectedLocationIndex = (selectedLocationIndex) => this.setState({ selectedLocationIndex });
 
   render() {
     const { selectedLocationIndex } = this.state;
@@ -52,8 +55,8 @@ class ShopLocationSelector extends Component {
           Shopping in:
           {locations[selectedLocationIndex]}
         </SelectButton>
-        <Select onChange={event => this.setSelectedLocationIndex(event.target.selectedIndex)}>
-          {locations.map(location => (
+        <Select onChange={(event) => this.setSelectedLocationIndex(event.target.selectedIndex)}>
+          {locations.map((location) => (
             <option key={location}>
               Shopping in:
               {location}

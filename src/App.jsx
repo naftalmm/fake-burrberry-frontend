@@ -20,7 +20,7 @@ const Page = styled.div`
   height: 100%;
   width: 100%;
   transition-duration: 0.25s;
-  ${props => props.isSideNavOpened
+  ${(props) => props.isSideNavOpened
     && css`
       transform: translate3d(274px, 0, 0);
       @media screen and (min-width: 48rem) {
@@ -31,9 +31,12 @@ const Page = styled.div`
 `;
 
 class App extends Component {
-  state = { isSideNavOpened: false };
+  constructor(props) {
+    super(props);
+    this.state = { isSideNavOpened: false };
+  }
 
-  handleSideNavToggle = () => this.setState(prevState => ({
+  handleSideNavToggle = () => this.setState((prevState) => ({
     isSideNavOpened: !prevState.isSideNavOpened,
   }));
 

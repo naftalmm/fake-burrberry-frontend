@@ -9,12 +9,12 @@ const ToolbarButton = styled(TextButton)`
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 
-  ${props => !props.isActive && css`opacity: 0.5;`};
+  ${(props) => !props.isActive && css`opacity: 0.5;`};
 
   &:after {
     display: inline-block;
     margin-left: 0.5rem;
-    transform: ${props => (props.isOpened ? 'rotate(180deg)' : 'none')};
+    transform: ${(props) => (props.isOpened ? 'rotate(180deg)' : 'none')};
     content: url(${arrow});
   }
 `;
@@ -33,22 +33,16 @@ const ToolbarButtonWrapper = styled.div`
 `;
 
 class DropdownButton extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    title: PropTypes.string.isRequired,
-    isActive: PropTypes.bool.isRequired,
-    onToggle: PropTypes.func.isRequired,
-  };
-
-  state = {
-    isOpened: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = { isOpened: false };
+  }
 
   handleClick = () => {
     const { onToggle } = this.props;
     const { isOpened } = this.state;
     this.setState(
-      prevState => ({
+      (prevState) => ({
         isOpened: !prevState.isOpened,
       }),
       () => onToggle(isOpened),
@@ -78,5 +72,12 @@ class DropdownButton extends Component {
     );
   }
 }
+
+DropdownButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
+};
 
 export default enhanceWithClickOutside(DropdownButton);

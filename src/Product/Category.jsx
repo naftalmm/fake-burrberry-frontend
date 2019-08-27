@@ -26,7 +26,7 @@ const Category = ({
   className, section, title, products,
 }) => {
   const category = title.toLowerCase().split(' ').join('-');
-  const cards = products.map(product => (
+  const cards = products.map((product) => (
     <div className="col-xs-6 col-md-3" key={product.id}>
       <Card
         id={product.id}

@@ -17,7 +17,7 @@ addLocaleData([...en, ...ru]);
 
 const Page = styled.div`
   position: absolute;
-  height: 100%;
+  height: auto;
   width: 100%;
   transition-duration: 0.25s;
   ${(props) => props.isSideNavOpened

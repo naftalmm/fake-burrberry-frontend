@@ -35,7 +35,7 @@ const MenSectionText = (
     <Text>
       Explore our menswear collection for the season. Sculptural knitwear,&nbsp;
       <Link to="/men/sweatshirts">sweatshirts</Link>
-, artist overalls and oversized cabans feature
+      , artist overalls and oversized cabans feature
       alongside our signature trench coat in both heritage and seasonal…
       <Button type="button">More</Button>
     </Text>

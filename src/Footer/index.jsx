@@ -6,7 +6,6 @@ import Help from './Help';
 import ShippingLocationSelector from './ShippingLocationSelector';
 import LanguageSelector from './LanguageSelector';
 
-
 const Footer = styled.footer`
   padding-top: 2rem;
 
@@ -28,7 +27,6 @@ const ButtonsWrapper = styled.div`
     padding-bottom: 2rem;
   }
 `;
-
 
 export default () => (
   <Footer>
